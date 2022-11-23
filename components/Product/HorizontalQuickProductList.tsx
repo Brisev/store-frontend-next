@@ -4,11 +4,12 @@ import { ProductCard } from "./productCard";
 import "swiper/css";
 
 import { FreeMode, Pagination } from "swiper";
+import ShopagoBox from "../Layout/ShopagoBox";
 
 const HorizontalQuickProductList = ({ related, title }: any) => {
   return (
-    <>
-      <Typography variant="h6" component="p" mb={1} mt={5}>
+    <ShopagoBox>
+      <Typography variant="h6" component="p" mb={2} mt={0}>
         {title}
       </Typography>
       <Swiper
@@ -35,7 +36,7 @@ const HorizontalQuickProductList = ({ related, title }: any) => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </ShopagoBox>
   );
 };
 

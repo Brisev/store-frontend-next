@@ -5,17 +5,8 @@ import ShopagoBox from "../Layout/ShopagoBox";
 const Reviews = (props: any) => {
   return (
     <ShopagoBox>
-      <Typography
-        variant="h5"
-        component="p"
-        mb={2}
-        sx={{
-          fontWeight: 700,
-          color: "var(--text-1)",
-          fontFamily: "Sansation",
-        }}
-      >
-        Reviews
+      <Typography variant="h6" mb={3} mt={1}>
+        Product Reviews
       </Typography>
       {props.reviews.length > 0 ? (
         <Grid
@@ -55,15 +46,16 @@ const Reviews = (props: any) => {
                     }}
                   >
                     {review.user}
-                    <Typography
-                      sx={{
-                        fontFamily: "inherit",
-                        color: "var(--text-2)",
-                        fontSize: "14px",
-                      }}
-                    >
-                      {review.message}
-                    </Typography>
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontFamily: "inherit",
+                      color: "var(--text-2)",
+                      mb: 2,
+                      fontSize: "14px",
+                    }}
+                  >
+                    {review.message}
                   </Typography>
                 </Box>
               </Stack>
@@ -71,11 +63,11 @@ const Reviews = (props: any) => {
           ))}
         </Grid>
       ) : (
-        <Box>
+        <>
           <Typography sx={{ fontFamily: "inherit", color: "var(--text-2)" }}>
             No reviews for this product
           </Typography>
-        </Box>
+        </>
       )}
     </ShopagoBox>
   );

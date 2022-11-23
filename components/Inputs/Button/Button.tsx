@@ -35,7 +35,7 @@ const ShopagoButton = ({
           // size="small"
           // disableElevation
           {...rest}
-          // onClick={onClickFuntion}
+          onClick={onClickFuntion}
         >
           {children}
         </StyledButton>
@@ -46,7 +46,7 @@ const ShopagoButton = ({
           variant="contained"
           // size="small"
           // disableElevation
-          // onClick={onClickFuntion}
+          onClick={onClickFuntion}
         >
           {children}
         </StyledButton>

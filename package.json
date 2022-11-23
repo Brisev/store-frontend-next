@@ -11,6 +11,8 @@
     "@mui/icons-material": "^5.10.15",
     "@mui/material": "^5.10.15",
     "@next/font": "^13.0.4",
+    "dompurify": "^2.4.1",
+    "jsdom": "^20.0.3",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",

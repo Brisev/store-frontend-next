@@ -1,16 +1,16 @@
 import { Fragment } from "react";
 import { SwiperSlide, Swiper } from "swiper/react";
 import "swiper/css";
-
 import { FreeMode, Pagination } from "swiper";
 import Image from "next/image";
+import { Box } from "@mui/material";
 
-const ProductDetailsMedia = () => {
+const ProductDetailsMedia = ({ media }) => {
   return (
     <Fragment>
       <Swiper
-        slidesPerView={2}
-        spaceBetween={3}
+        slidesPerView={1.5}
+        spaceBetween={80}
         freeMode={true}
         pagination={{
           clickable: true,
@@ -18,23 +18,18 @@ const ProductDetailsMedia = () => {
         modules={[FreeMode, Pagination]}
         className="mySwiper"
       >
-        {[23].map((item: any, index: number) => (
-          <SwiperSlide>
-            {/* <Image
-              src="https://images.unsplash.com/photo-1669072257143-5592e0652644?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
-              alt=""
-              width={200}
-              height={200}
-            /> */}
-            {/* <ProductCard
-              id={item.id}
-              showActionButtons={false}
-              name={item.name}
-              price={item.price}
-              media={item.resources[0].file}
-              productDiscount={item.productDiscount}
-              productDiscountType={item.productDiscountType}
-            /> */}
+        {media.map((item: any, index: number) => (
+          <SwiperSlide key={index}>
+            <Box
+              sx={{
+                width: 300,
+                height: 300,
+                backgroundColor: "#fff",
+                background: `url(${item.file}) no-repeat center center/cover`,
+              }}
+            >
+              {/* <img src={item.file} alt={item} width="100%" height="auto" /> */}
+            </Box>
           </SwiperSlide>
         ))}
       </Swiper>
