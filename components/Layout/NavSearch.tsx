@@ -12,6 +12,7 @@ const Input = styled("input")(({ theme }) => ({
   fontSize: "17px",
   margin: "0 auto",
   border: "1px solid rgba(0,0,0,.25)",
+  borderRadius: "1rem",
   backgroundColor: theme.palette.mode === "light" ? "#fff" : "#000",
   color: theme.palette.mode === "light" ? "#000" : "#fff",
 }));

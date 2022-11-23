@@ -1,21 +1,25 @@
-import { Button, styled } from "@mui/material";
+import { Button, ButtonProps, styled } from "@mui/material";
 import { memo, MouseEventHandler, ReactElement } from "react";
 import { useState, useEffect } from "react";
 
 const StyledButton = styled(Button)(({ theme }) => ({
   padding: ".4rem 1rem",
-  borderRadius: ".3rem",
+  borderRadius: ".5rem",
   textTransform: "capitalize",
   background: "primary",
   color: "primary.main",
 }));
 
-interface ButtonProps {
+interface ShopagoButtonProps extends ButtonProps {
   children: ReactElement | ReactElement[];
   onClickFuntion?: MouseEventHandler<HTMLButtonElement>;
 }
 
-const ShopagoButton = ({ children, onClickFuntion }: ButtonProps) => {
+const ShopagoButton = ({
+  children,
+  onClickFuntion,
+  ...rest
+}: ShopagoButtonProps) => {
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
@@ -28,17 +32,21 @@ const ShopagoButton = ({ children, onClickFuntion }: ButtonProps) => {
         <StyledButton
           variant="contained"
           disableElevation
-          size="small"
-          onClick={onClickFuntion}
+          // size="small"
+          // disableElevation
+          {...rest}
+          // onClick={onClickFuntion}
         >
           {children}
         </StyledButton>
       ) : (
         <StyledButton
-          variant="contained"
-          size="small"
           disableElevation
-          onClick={onClickFuntion}
+          {...rest}
+          variant="contained"
+          // size="small"
+          // disableElevation
+          // onClick={onClickFuntion}
         >
           {children}
         </StyledButton>

@@ -13,6 +13,7 @@ import {
   StorefrontOutlined,
   //   StoreOutlined,
 } from "@mui/icons-material";
+import AuthDialog from "../AuthModal";
 
 const menus = [
   {
@@ -34,48 +35,54 @@ const menus = [
 ];
 
 export default function MobileNavigation() {
-  const [value, setValue] = React.useState("recents");
+  const [value, setValue] = React.useState("Home");
+  const [showModal, setshowModal] = React.useState(false);
 
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+  const handleMenuClick = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
+    setshowModal((oldState) => !oldState);
   };
 
   return (
-    <Paper
-      sx={{
-        position: "fixed",
-        borderTop: "1px solid #cfcfcf",
-        bottom: 0,
-        left: 0,
-        right: 0,
-        zIndex: 2,
-        display: {
-          xs: "block",
-          sm: "none",
-          md: "none",
-          lg: "none",
-          xl: "none",
-        },
-      }}
-      //   elevation={10}
-    >
-      <BottomNavigation
-        showLabels
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
+    <>
+      <AuthDialog open={showModal} handleClose={handleMenuClick} />
+      <Paper
+        sx={{
+          position: "fixed",
+          borderTop: "1px solid #cfcfcf",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          zIndex: 2,
+          display: {
+            xs: "block",
+            sm: "none",
+            md: "none",
+            lg: "none",
+            xl: "none",
+          },
         }}
+        //   elevation={10}
       >
-        {menus.map((menu, index) => {
-          return (
-            <BottomNavigationAction
-              label={menu.title}
-              icon={menu.icon}
-              key={`${menu.title}_${index}`}
-            />
-          );
-        })}
-      </BottomNavigation>
-    </Paper>
+        <BottomNavigation
+          showLabels
+          value={value}
+          onChange={(event, newValue) => {
+            setValue(newValue);
+          }}
+        >
+          {menus.map((menu, index) => {
+            return (
+              <BottomNavigationAction
+                onClick={(e) => handleMenuClick(e, menu.title)}
+                label={menu.title}
+                icon={menu.icon}
+                key={`${menu.title}_${index}`}
+              />
+            );
+          })}
+        </BottomNavigation>
+      </Paper>
+    </>
   );
 }
