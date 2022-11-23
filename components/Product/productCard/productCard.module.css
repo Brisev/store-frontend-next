@@ -1,0 +1,12 @@
+.productMedia,
+.productMedia * {
+  box-sizing: border-box;
+  /* position: absolute; */
+  width: 172px;
+  height: 172px;
+  /* left: 0px;
+  top: 0px; */
+  background: rgba(105, 127, 242, 0.15);
+  border: 1px solid rgba(105, 127, 242, 0.24);
+  border-radius: 16px;
+}

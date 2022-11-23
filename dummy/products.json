@@ -1,0 +1,567 @@
+[
+  {
+    "id": "8a3dc109-5656-4f33-89a1-bad5d519bbcc",
+    "name": "iPhone 13 pro max",
+    "description": "<p>This is a paragraph.</p> <p>This is another paragraph.</p>",
+    "tags": ["apple", "iphone", "ios"],
+    "categoryId": "b81c410e-a5d1-4c07-8d42-6e46599df29c",
+    "storeId": "be61a64c-c5e1-42b6-ba12-c2e78da0c827",
+    "price": 812000,
+    "eligibleForFreeShipping": false,
+    "productWeight": "45.00",
+    "stockQuantity": 54,
+    "productDiscountType": "fixed",
+    "productDiscount": 22000,
+    "createdAt": "2022-11-18T18:33:04.735Z",
+    "updatedAt": "2022-11-18T18:33:04.735Z",
+    "variance": [
+      {
+        "id": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+        "name": "Colour",
+        "productId": "8a3dc109-5656-4f33-89a1-bad5d519bbcc",
+        "createdAt": "2022-11-18T18:33:04.740Z",
+        "updatedAt": "2022-11-18T18:33:04.740Z",
+        "options": [
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "Oceanic Blue",
+            "price": "50000.00",
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          },
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "Gold",
+            "price": "50000.00",
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          },
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "Space Black",
+            "price": "50000.00",
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          }
+        ]
+      },
+      {
+        "id": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+        "name": "Storage",
+        "productId": "8a3dc109-5656-4f33-89a1-bad5d519bbcc",
+        "createdAt": "2022-11-18T18:33:04.740Z",
+        "updatedAt": "2022-11-18T18:33:04.740Z",
+        "options": [
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "128GB",
+            "price": "50000.00",
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          },
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "256GB",
+            "price": "50000.00",
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          },
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "512GB",
+            "price": "50000.00",
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          },
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "1024GB",
+            "price": "50000.00",
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          }
+        ]
+      }
+    ],
+    "resources": [
+      {
+        "id": "9cb6724a-8f7b-45c2-b8fb-7d24802f425a",
+        "type": "image",
+        "file": "https://stunner.ng/wp-content/uploads/2022/07/iphone-13-pro-max-1.jpg",
+        "format": "png",
+        "productId": "8a3dc109-5656-4f33-89a1-bad5d519bbcc",
+        "service": "cloudinary",
+        "cloudId": null,
+        "assetsId": null,
+        "createdAt": "2022-11-18T18:33:04.750Z",
+        "updatedAt": "2022-11-18T18:33:04.750Z"
+      },
+      {
+        "id": "9cb6724a-8f7b-45c2-b8fb-7d24802f425a",
+        "type": "image",
+        "file": "https://phonesvendor.com.ng/wp-content/uploads/2021/10/619m8rLBQSL.jpg",
+        "format": "png",
+        "productId": "8a3dc109-5656-4f33-89a1-bad5d519bbcc",
+        "service": "cloudinary",
+        "cloudId": null,
+        "assetsId": null,
+        "createdAt": "2022-11-18T18:33:04.750Z",
+        "updatedAt": "2022-11-18T18:33:04.750Z"
+      },
+      {
+        "id": "9cb6724a-8f7b-45c2-b8fb-7d24802f425a",
+        "type": "image",
+        "file": "https://www.mobiledokan.com/wp-content/uploads/2021/10/Apple-iPhone-13-Pro-Max-image.jpg",
+        "format": "png",
+        "productId": "8a3dc109-5656-4f33-89a1-bad5d519bbcc",
+        "service": "cloudinary",
+        "cloudId": null,
+        "assetsId": null,
+        "createdAt": "2022-11-18T18:33:04.750Z",
+        "updatedAt": "2022-11-18T18:33:04.750Z"
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "id": "9a4dc2010-6767-5f44-910a2-bad6d6110bbcc",
+    "name": "Dell Aurora",
+    "description": "<p>This is a paragraph.</p> <p>This is another paragraph.</p>",
+     "tags": ["windows", "dell", "gaming", "alienware"],
+    "categoryId": "c92c410e-a5d1-4c07-8d42-6e46599df29c",
+    "storeId": "be61a64c-c5e1-42b6-ba12-c2e78da0c827",
+    "price": 1270000,
+    "eligibleForFreeShipping": false,
+    "productWeight": "145.00",
+    "stockQuantity": 67,
+    "productDiscountType": "fixed",
+    "productDiscount": 45000,
+    "createdAt": "2022-11-18T18:33:04.735Z",
+    "updatedAt": "2022-11-18T18:33:04.735Z",
+    "variance": [
+      {
+        "id": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+        "name": "Configuration",
+        "productId": "8a3dc109-5656-4f33-89a1-bad5d519bbcc",
+        "createdAt": "2022-11-18T18:33:04.740Z",
+        "updatedAt": "2022-11-18T18:33:04.740Z",
+        "options": [
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "Office",
+            "price": 500000,
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          },
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "Gamer",
+            "price": 500000,
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          },
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "Enterprise",
+            "price": 500000,
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          },
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "Military Grade",
+            "price": 500000,
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          }
+        ]
+      },
+      {
+        "id": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+        "name": "Cage / Tower",
+        "productId": "8a3dc109-5656-4f33-89a1-bad5d519bbcc",
+        "createdAt": "2022-11-18T18:33:04.740Z",
+        "updatedAt": "2022-11-18T18:33:04.740Z",
+        "options": [
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "Mini",
+            "price": 500000,
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          },
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "Mid",
+            "price": 500000,
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          },
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "Full",
+            "price": 500000,
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          }
+        ]
+      }
+    ],
+    "resources": [
+      {
+        "id": "9cb6724a-8f7b-45c2-b8fb-7d24802f425a",
+        "type": "image",
+        "file": "https://images.hothardware.com/contentimages/article/2917/content/small_hero-alienware-aurora-ryzen.jpg",
+        "format": "png",
+        "productId": "8a3dc109-5656-4f33-89a1-bad5d519bbcc",
+        "service": "cloudinary",
+        "cloudId": null,
+        "assetsId": null,
+        "createdAt": "2022-11-18T18:33:04.750Z",
+        "updatedAt": "2022-11-18T18:33:04.750Z"
+      },
+      {
+        "id": "9cb6724a-8f7b-45c2-b8fb-7d24802f425a",
+        "type": "image",
+        "file": "https://m.media-amazon.com/images/I/71eMGaxGv2L.jpg",
+        "format": "png",
+        "productId": "8a3dc109-5656-4f33-89a1-bad5d519bbcc",
+        "service": "cloudinary",
+        "cloudId": null,
+        "assetsId": null,
+        "createdAt": "2022-11-18T18:33:04.750Z",
+        "updatedAt": "2022-11-18T18:33:04.750Z"
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "id": "10b3dc29-5asd56-4a33-89a1-94d5193ec",
+    "name": "M1 Macbook Pro",
+    "description": "<p>This is a paragraph.</p> <p>This is another paragraph.</p>","tags": ["macbook", "laptop", "ios", "apple"],
+    "categoryId": "b81c410e-a5d1-4c07-8d42-6e46599df29c",
+    "storeId": "be61a64c-c5e1-42b6-ba12-c2e78da0c827",
+    "price": 990000,
+    "eligibleForFreeShipping": false,
+    "productWeight": "45.00",
+    "stockQuantity": 88,
+    "productDiscountType": "fixed",
+    "productDiscount": 62000,
+    "createdAt": "2022-11-18T18:33:04.735Z",
+    "updatedAt": "2022-11-18T18:33:04.735Z",
+    "variance": [
+      {
+        "id": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+        "name": "Colour",
+        "productId": "8a3dc109-5656-4f33-89a1-bad5d519bbcc",
+        "createdAt": "2022-11-18T18:33:04.740Z",
+        "updatedAt": "2022-11-18T18:33:04.740Z",
+        "options": [
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "Silver",
+            "price": "50000.00",
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          },
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "Matte Black",
+            "price": "50000.00",
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          },
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "Gold",
+            "price": "50000.00",
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          }
+        ]
+      },
+      {
+        "id": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+        "name": "Storage",
+        "productId": "8a3dc109-5656-4f33-89a1-bad5d519bbcc",
+        "createdAt": "2022-11-18T18:33:04.740Z",
+        "updatedAt": "2022-11-18T18:33:04.740Z",
+        "options": [
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "256GB",
+            "price": "50000.00",
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          },
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "512GB",
+            "price": "50000.00",
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          },
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "1TB",
+            "price": "50000.00",
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          },
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "2TB",
+            "price": "50000.00",
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          },
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "4TB",
+            "price": "50000.00",
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          }
+        ]
+      }
+    ],
+    "resources": [
+      {
+        "id": "9cb6724a-8f7b-45c2-b8fb-7d24802f425a",
+        "type": "image",
+        "file": "https://i0.wp.com/maplestore.in/wp-content/uploads/2021/10/MacBook_Pro_16-in_Silver_PDP_Image_Position-1__en-IN-scaled.jpg?fit=2560%2C2560&ssl=1",
+        "format": "png",
+        "productId": "8a3dc109-5656-4f33-89a1-bad5d519bbcc",
+        "service": "cloudinary",
+        "cloudId": null,
+        "assetsId": null,
+        "createdAt": "2022-11-18T18:33:04.750Z",
+        "updatedAt": "2022-11-18T18:33:04.750Z"
+      },
+      {
+        "id": "9cb6724a-8f7b-45c2-b8fb-7d24802f425a",
+        "type": "image",
+        "file": "https://b7.3ddd.ru/media/cache/tuk_model_custom_filter_en/model_images/0000/0000/3743/3743176.617903d9e7e87.jpeg",
+        "format": "png",
+        "productId": "8a3dc109-5656-4f33-89a1-bad5d519bbcc",
+        "service": "cloudinary",
+        "cloudId": null,
+        "assetsId": null,
+        "createdAt": "2022-11-18T18:33:04.750Z",
+        "updatedAt": "2022-11-18T18:33:04.750Z"
+      },
+      {
+        "id": "9cb6724a-8f7b-45c2-b8fb-7d24802f425a",
+        "type": "image",
+        "file": "https://i.expansys.net/img/b/368010/apple-macbook-pro-16-inch-2021.jpg",
+        "format": "png",
+        "productId": "8a3dc109-5656-4f33-89a1-bad5d519bbcc",
+        "service": "cloudinary",
+        "cloudId": null,
+        "assetsId": null,
+        "createdAt": "2022-11-18T18:33:04.750Z",
+        "updatedAt": "2022-11-18T18:33:04.750Z"
+      }
+    ],
+    "reviews": [
+      {
+        "id": "awef2f-wcasx-4f54-dasas-233r4ferca",
+        "user": "Jane Doe",
+        "user_image": "http://www.venmond.com/demo/vendroid/img/avatar/big.jpg",
+        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+        "rating": 4,
+        "createdAt": "2022-11-18T18:33:04.746Z",
+        "updatedAt": "2022-11-18T18:33:04.746Z"
+      },
+      {
+        "id": "b2009a-08923en-f92f2sas-12r4ferca",
+        "user": "John Doe",
+        "user_image": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80",
+        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+        "rating": 3,
+        "createdAt": "2022-11-18T18:33:04.746Z",
+        "updatedAt": "2022-11-18T18:33:04.746Z"
+      },
+      {
+        "id": "b2009a-08923en-f92f2sas-12r4ferca",
+        "user": "Mary Walker",
+        "user_image": "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+        "rating": 4,
+        "createdAt": "2022-11-18T18:33:04.746Z",
+        "updatedAt": "2022-11-18T18:33:04.746Z"
+      },
+      {
+        "id": "8989enf9-q900efn-289f-nq2-f0n8c",
+        "user": "John Smith",
+        "user_image": "https://preview.keenthemes.com/metronic-v4/theme/assets/pages/media/profile/profile_user.jpg",
+        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+        "rating": 4,
+        "createdAt": "2022-11-18T18:33:04.746Z",
+        "updatedAt": "2022-11-18T18:33:04.746Z"
+      }
+    ]
+  },
+  {
+    "id": "163dc29-awef3ef-4a33-89a1-94d5193ec",
+    "name": "2018 Macbook Pro",
+    
+    "description": "<p>This is a paragraph.</p> <p>This is another paragraph.</p>","tags": ["macbook", "pc", "ios", "apple"],
+    "categoryId": "b81c410e-a5d1-4c07-8d42-6e46599df29c",
+    "storeId": "be61a64c-c5e1-42b6-ba12-c2e78da0c827",
+    "price": 720000,
+    "eligibleForFreeShipping": false,
+    "productWeight": "45.00",
+    "stockQuantity": 88,
+    "productDiscountType": "fixed",
+    "productDiscount": 62000,
+    "createdAt": "2022-11-18T18:33:04.735Z",
+    "updatedAt": "2022-11-18T18:33:04.735Z",
+    "variance": [
+      {
+        "id": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+        "name": "Colour",
+        "productId": "8a3dc109-5656-4f33-89a1-bad5d519bbcc",
+        "createdAt": "2022-11-18T18:33:04.740Z",
+        "updatedAt": "2022-11-18T18:33:04.740Z",
+        "options": [
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "Silver",
+            "price": "50000.00",
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          },
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "Gold",
+            "price": "50000.00",
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          }
+        ]
+      },
+      {
+        "id": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+        "name": "Storage",
+        "productId": "8a3dc109-5656-4f33-89a1-bad5d519bbcc",
+        "createdAt": "2022-11-18T18:33:04.740Z",
+        "updatedAt": "2022-11-18T18:33:04.740Z",
+        "options": [
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "256GB",
+            "price": "50000.00",
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          },
+          {
+            "id": "b4730b71-21c6-4f54-9be2-3131702ec307",
+            "option": "512GB",
+            "price": "50000.00",
+            "stockQuantity": 54,
+            "varianceId": "7859f983-9f96-4210-b4a0-0adc53b85c8d",
+            "createdAt": "2022-11-18T18:33:04.746Z",
+            "updatedAt": "2022-11-18T18:33:04.746Z"
+          }
+        ]
+      }
+    ],
+    "resources": [
+      {
+        "id": "9cb6724a-8f7b-45c2-b8fb-7d24802f425a",
+        "type": "image",
+        "file": "http://static.compareindia.news18.com/compareindia/gallery/images/2019/jan/macbookair2018_1_210953015666.jpg",
+        "format": "png",
+        "productId": "8a3dc109-5656-4f33-89a1-bad5d519bbcc",
+        "service": "cloudinary",
+        "cloudId": null,
+        "assetsId": null,
+        "createdAt": "2022-11-18T18:33:04.750Z",
+        "updatedAt": "2022-11-18T18:33:04.750Z"
+      },
+      {
+        "id": "9cb6724a-8f7b-45c2-b8fb-7d24802f425a",
+        "type": "image",
+        "file": "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP775/sp775-mbp13touch-silver.jpeg",
+        "format": "png",
+        "productId": "8a3dc109-5656-4f33-89a1-bad5d519bbcc",
+        "service": "cloudinary",
+        "cloudId": null,
+        "assetsId": null,
+        "createdAt": "2022-11-18T18:33:04.750Z",
+        "updatedAt": "2022-11-18T18:33:04.750Z"
+      }
+    ],
+    "reviews": [
+      {
+        "id": "b2009a-08923en-f92f2sas-12r4ferca",
+        "user": "Kevin Mann",
+        "user_image": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80",
+        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+        "rating": 3,
+        "createdAt": "2022-11-18T18:33:04.746Z",
+        "updatedAt": "2022-11-18T18:33:04.746Z"
+      },
+      {
+        "id": "8989enf9-q900efn-289f-nq2-f0n8c",
+        "user": "Matt Doe",
+        "user_image": "https://preview.keenthemes.com/metronic-v4/theme/assets/pages/media/profile/profile_user.jpg",
+        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+        "rating": 2,
+        "createdAt": "2022-11-18T18:33:04.746Z",
+        "updatedAt": "2022-11-18T18:33:04.746Z"
+      }
+    ]
+  }
+]
