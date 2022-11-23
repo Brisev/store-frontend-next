@@ -11,6 +11,7 @@ import {
   Grid,
   IconButton,
   Paper,
+  Rating,
   Typography,
 } from "@mui/material";
 import {
@@ -34,7 +35,7 @@ const ProductDetails = () => {
     <Fragment>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6} md={6}>
-          <ProductDetailsMedia media={DUMMY_JSON[2].resources} />
+          <ProductDetailsMedia media={DUMMY_JSON[0].resources} />
         </Grid>
         <Grid item xs={12} sm={6} md={6}>
           <Box
@@ -75,33 +76,44 @@ const ProductDetails = () => {
                 </IconButton>
               </div>
             </Stack>
-            <Typography my={1} variant="h6" sx={{ fontWeight: 500 }}>
+            <Typography mt={1} variant="h6" sx={{ fontWeight: 500 }}>
               <span className="sansation">{DUMMY_JSON[0].name}</span>
             </Typography>
 
-            <Typography mt={-1} sx={{ color: "#000", mt: 0 }}>
+            <Stack
+              direction="row"
+              sx={{
+                mb: -0.3,
+                ml: -0.3,
+              }}
+            >
+              <Rating value={3.5} readOnly size="small" />
+              <Typography variant="caption" sx={{ ml: 1 }}>
+                <> (10,000 ratings)</>
+              </Typography>
+            </Stack>
+
+            <Typography sx={{ color: "#000", mt: 1 }}>
               <span className="sansation">N{(50000).toLocaleString()}</span>
             </Typography>
-
             <Typography
               sx={{
                 textDecoration: "line-through",
-                fontWeight: 500,
-                mt: 1,
-                color: "var(--bg-secondary)",
+                fontWeight: 400,
+                mt: -0.1,
+                color: "grey",
                 fontSize: { xs: "14px", sm: "14px", md: "12px" },
               }}
             >
               N{899}
             </Typography>
-
             <Typography
               component="p"
               ml={0}
               mt={4}
-              sx={{ color: "red", fontSize: "14px" }}
+              sx={{ color: "red", fontSize: "13px" }}
             >
-              <ReportProblem sx={{ fontSize: 15, mb: -0.4 }} /> 8 units left
+              <ReportProblem sx={{ fontSize: 13, mb: -0.2 }} /> 8 units left
               {/* {DUMMY_JSON[0].stockQuantity} in stock */}
             </Typography>
           </Box>

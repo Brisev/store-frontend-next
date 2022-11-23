@@ -36,6 +36,7 @@ const Reviews = (props: any) => {
                     name="simple-controlled"
                     size="small"
                     value={review.rating}
+                    readOnly
                   />
                   <Typography
                     mb={1}

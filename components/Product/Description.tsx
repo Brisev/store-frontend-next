@@ -9,7 +9,7 @@ const ProductDetailsAndSpecification = (props: any) => {
       <Typography variant="h6" mb={3} mt={1}>
         Product details
       </Typography>
-      {/* <p>{HtmlDisplay()}</p> */}
+      <>{HtmlDisplay(props.specification)}</>
     </ShopagoBox>
   );
 };

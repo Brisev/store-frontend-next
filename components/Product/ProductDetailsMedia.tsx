@@ -3,14 +3,19 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import "swiper/css";
 import { FreeMode, Pagination } from "swiper";
 import Image from "next/image";
-import { Box } from "@mui/material";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 
 const ProductDetailsMedia = ({ media }) => {
+  const theme = useTheme();
+  const isSmDown = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
+  //   let itemsToShow = isSmDown ? 2 : isMdUp ? 4 : null;
+  let spaceBetween = isSmDown ? 50 : isMdUp ? -120 : null;
   return (
     <Fragment>
       <Swiper
-        slidesPerView={1.5}
-        spaceBetween={80}
+        slidesPerView={1.4}
+        spaceBetween={spaceBetween}
         freeMode={true}
         pagination={{
           clickable: true,

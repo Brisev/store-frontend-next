@@ -47,7 +47,9 @@ export const ProductCard = (props: PRODUCT_CARD) => {
     <Card sx={{ maxWidth: 180, maxHeight: 350, boxShadow: "none" }}>
       <ProductCardMedia id={id} media={media} name={name} />
       <CardContent>
-        <Typography mb={1}>{name}</Typography>
+        <Typography mb={1} noWrap>
+          {name}
+        </Typography>
         <Stack
           sx={{
             gap: ".5rem",
@@ -64,6 +66,7 @@ export const ProductCard = (props: PRODUCT_CARD) => {
             sx={{
               fontSize: "15px",
               fontWeight: 500,
+              mt: -1,
               color: "var(--text-1)",
             }}
           >
@@ -79,9 +82,10 @@ export const ProductCard = (props: PRODUCT_CARD) => {
           <Typography
             sx={{
               textDecoration: "line-through",
-              fontWeight: 500,
-              color: "secondary.main",
-              fontSize: { xs: "12px", sm: "14px", md: "12px" },
+              fontWeight: 400,
+              mt: -1,
+              color: "grey",
+              fontSize: { xs: "12px", sm: "12px", md: "11px" },
             }}
           >
             N
