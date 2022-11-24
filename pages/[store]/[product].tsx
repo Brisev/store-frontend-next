@@ -24,6 +24,7 @@ import styled from "@emotion/styled";
 import Reviews from "../../components/Reviews";
 import ShopagoBox from "../../components/Layout/ShopagoBox";
 import ProductDetailsAndSpecification from "../../components/Product/Description";
+import { useRouter } from "next/router";
 
 const Item = styled(Paper)(({ theme }) => ({
   padding: 10,
@@ -31,23 +32,21 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const ProductDetails = () => {
-  const triggerShare = () => {
-    console.log("kkkkkkkk");
-    // alert("kkk");
+  const router = useRouter();
 
-    // if (navigator.share) {
-    navigator
-      .share({
-        title: "WebShare API Demo",
-        url: "https://codepen.io/ayoisaiah/pen/YbNazJ",
-      })
-      .then(() => {
-        console.log("Thanks for sharing!");
-      })
-      .catch(console.error);
-    // } else {
-    // fallback
-    // }
+  const triggerShare = () => {
+    console.log(router);
+
+    if (navigator.share) {
+      navigator
+        .share({
+          title: DUMMY_JSON[0].name,
+          text: `Hi, checkout the ${DUMMY_JSON[0].name} from shopago`,
+          url: "https://store-frontend-next.vercel.app/store/9a4dc2010-6767-5f44-910a2-bad6d6110bbcc",
+        })
+        .then(() => {})
+        .catch();
+    }
   };
   return (
     <Fragment>
@@ -84,7 +83,13 @@ const ProductDetails = () => {
                 <IconButton
                   onClick={triggerShare}
                   aria-label="share"
-                  sx={{ mt: -0.5 }}
+                  sx={{
+                    mt: -0.5,
+                    display: {
+                      xs: "inline",
+                      sm: "none",
+                    },
+                  }}
                   size="small"
                 >
                   <Share fontSize="small" />
