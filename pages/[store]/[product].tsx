@@ -86,7 +86,7 @@ const ProductDetails = () => {
                   sx={{
                     mt: -0.5,
                     display: {
-                      xs: "inline",
+                      xs: "inline-block",
                       sm: "none",
                     },
                   }}
@@ -97,7 +97,7 @@ const ProductDetails = () => {
 
                 <IconButton
                   aria-label="favourite"
-                  sx={{ mt: -0.5, mr: -1 }}
+                  sx={{ mt: -1.3, mr: -1 }}
                   size="small"
                 >
                   <FavoriteSharp fontSize="small" />
