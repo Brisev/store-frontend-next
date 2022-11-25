@@ -97,7 +97,7 @@ const ProductDetails = () => {
 
                 <IconButton
                   aria-label="favourite"
-                  sx={{ mt: -1.3, mr: -1 }}
+                  sx={{ mt: -1.1, mr: -1 }}
                   size="small"
                 >
                   <FavoriteSharp fontSize="small" />
@@ -122,7 +122,7 @@ const ProductDetails = () => {
             </Stack>
 
             <Typography sx={{ color: "#000", mt: 1 }}>
-              <span className="sansation">N{(50000).toLocaleString()}</span>
+              <span className="sansation">₦{(50000).toLocaleString()}</span>
             </Typography>
             <Typography
               sx={{
@@ -133,7 +133,7 @@ const ProductDetails = () => {
                 fontSize: { xs: "14px", sm: "14px", md: "12px" },
               }}
             >
-              N{899}
+              ₦90,000
             </Typography>
             <Typography
               component="p"

@@ -12,14 +12,21 @@ const ReviewItem = ({ user, rating, message }) => {
       <Box>
         <Rating name="simple-controlled" size="small" value={rating} readOnly />
         <Typography
-          mb={1}
           sx={{
             fontWeight: 700,
-            color: "var(--text-1)",
-            fontFamily: "Sansation",
           }}
         >
           {user}
+        </Typography>
+        <Typography
+          variant="caption"
+          mb={1}
+          sx={{
+            fontWeight: 300,
+            color: "grey",
+          }}
+        >
+          an hour ago
         </Typography>
         <Typography
           sx={{

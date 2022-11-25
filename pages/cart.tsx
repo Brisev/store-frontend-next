@@ -37,15 +37,14 @@ const Cart = () => {
   return (
     <>
       <Typography
-        variant="h5"
+        variant="h4"
         sx={{
-          fontFamily: "Sansation",
-          fontWeight: 700,
-          pt: "2rem",
+          fontWeight: 600,
+          pt: "1rem",
           pb: "2rem",
         }}
       >
-        Shopping Cart
+        Cart
       </Typography>
       {cart.items.length > 0 ? (
         <Grid container spacing={2}>
@@ -93,7 +92,7 @@ const Cart = () => {
             alignItems="center"
             justifyContent="space-between"
             py={1}
-            px={4}
+            px={3}
             sx={{
               zIndex: 5,
               display: { xs: "flex", sm: "flex", md: "none" },
@@ -114,7 +113,7 @@ const Cart = () => {
                 borderRadius: "",
               }}
             >
-              Checkout (N23,000)
+              Checkout (₦1,233,000)
             </MuiButton>
           </Stack>
         </Grid>

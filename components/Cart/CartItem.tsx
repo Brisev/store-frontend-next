@@ -44,33 +44,31 @@ const CartItem = (props: any) => {
             <Typography sx={{ fontWeight: 400 }}>{props.item.name}</Typography>
             <Typography
               sx={{
-                fontWeight: 500,
+                fontWeight: 600,
               }}
             >
-              N{props.item.price.toLocaleString()}
+              ₦{props.item.price.toLocaleString()}
             </Typography>
             <Typography
               sx={{
                 fontSize: "13px",
+                textDecoration: "line-through",
                 color: "grey",
               }}
             >
-              4 items in cart
+              ₦900,000
             </Typography>
           </CardContent>
         </Box>
       </Box>
-      <Box textAlign="right" sx={{ mt: -4, pb: 1, pr: 1 }}>
+      <Box textAlign="right" sx={{ mt: -3, pb: 1, pr: 1 }}>
         <ButtonGroup size="small" disableElevation variant="outlined">
-          <Button color="error">
-            <DeleteRounded fontSize="small" />
-          </Button>
           <Button>
-            <RemoveCircleRounded fontSize="small" />
+            <DeleteRounded fontSize="small" color="error" />
           </Button>
-          <Button>
-            <AddCircleRounded fontSize="small" />
-          </Button>
+          <Button>-{/* <RemoveCircleRounded fontSize="small" /> */}</Button>
+          <Button>9</Button>
+          <Button>+{/* <AddCircleRounded fontSize="small" /> */}</Button>
         </ButtonGroup>
       </Box>
     </Card>

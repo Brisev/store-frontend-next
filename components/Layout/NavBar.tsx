@@ -43,7 +43,7 @@ export default function NavigationBar() {
             Shopago
           </Typography>
 
-          {/* <UseAutocomplete /> */}
+          <UseAutocomplete />
 
           <IconButton
             sx={{

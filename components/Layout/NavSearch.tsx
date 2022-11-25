@@ -1,24 +1,29 @@
 import * as React from "react";
 import { useAutocomplete } from "@mui/base/AutocompleteUnstyled";
 import { styled } from "@mui/system";
+import { Box } from "@mui/material";
 
 const Label = styled("label")({
   display: "block",
 });
 
 const Input = styled("input")(({ theme }) => ({
-  width: 250,
+  width: 600,
   height: 30,
   fontSize: "17px",
-  margin: "0 auto",
+  //   alignContent: "center",
+  //   margin: ,
+  alignSelf: "center",
   border: "1px solid rgba(0,0,0,.25)",
-  borderRadius: "1rem",
+  //   borderRadius: "1rem",
   backgroundColor: theme.palette.mode === "light" ? "#fff" : "#000",
   color: theme.palette.mode === "light" ? "#000" : "#fff",
+  display: "flex",
+  justifyContent: "center",
 }));
 
 const Listbox = styled("ul")(({ theme }) => ({
-  width: 300,
+  width: 900,
   margin: 0,
   padding: 6,
   zIndex: 1,
@@ -54,7 +59,18 @@ export default function UseAutocomplete() {
   });
 
   return (
-    <div>
+    <Box
+      sx={{
+        mr: 2,
+        display: {
+          xs: "none",
+          sm: "block",
+          md: "block",
+          lg: "block",
+          xl: "block",
+        },
+      }}
+    >
       <div {...getRootProps()}>
         {/* <Label {...getInputLabelProps()}>useAutocomplete</Label> */}
         <Input {...getInputProps()} />
@@ -68,7 +84,7 @@ export default function UseAutocomplete() {
           ))}
         </Listbox>
       ) : null}
-    </div>
+    </Box>
   );
 }
 

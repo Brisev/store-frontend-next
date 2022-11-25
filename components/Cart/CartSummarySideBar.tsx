@@ -8,6 +8,9 @@ const CartSumarrySideBar = () => {
       sx={{
         height: 250,
         backgroundColor: "white",
+        position: "sticky",
+        width: 400,
+        top: 154,
       }}
     >
       <Stack
@@ -18,12 +21,9 @@ const CartSumarrySideBar = () => {
         alignItems="center"
         justifyContent="space-between"
       >
-        <Typography variant="h6" sx={{ fontFamily: "Sansation" }}>
-          Order Summary
-        </Typography>
+        <Typography variant="h6">Order Summary</Typography>
         <Typography
           sx={{
-            fontFamily: "Sansation",
             fontWeight: 700,
             color: "var(--bg-accent)",
           }}
@@ -40,16 +40,13 @@ const CartSumarrySideBar = () => {
         alignItems="center"
         justifyContent="space-between"
       >
-        <Typography sx={{ fontFamily: "Sansation", color: "var(--text-2)" }}>
-          Subtotal
-        </Typography>
+        <Typography sx={{ color: "var(--text-2)" }}>Subtotal</Typography>
         <Typography
           sx={{
-            fontFamily: "Sansation",
             fontWeight: 700,
           }}
         >
-          N{90000}
+          ₦900,000
         </Typography>
       </Stack>
       <Stack
@@ -59,12 +56,9 @@ const CartSumarrySideBar = () => {
         alignItems="center"
         justifyContent="space-between"
       >
-        <Typography sx={{ fontFamily: "Sansation", color: "var(--text-2)" }}>
-          Delivery Fee
-        </Typography>
+        <Typography sx={{ color: "var(--text-2)" }}>Delivery Fee</Typography>
         <Typography
           sx={{
-            fontFamily: "Sansation",
             fontWeight: 700,
           }}
         >
@@ -81,7 +75,7 @@ const CartSumarrySideBar = () => {
         <Typography
           sx={{
             fontWeight: 700,
-            fontFamily: "Sansation",
+
             color: "var(--text-2)",
           }}
         >
@@ -89,12 +83,11 @@ const CartSumarrySideBar = () => {
         </Typography>
         <Typography
           sx={{
-            fontFamily: "Sansation",
             fontWeight: 700,
             color: "var(--bg-accent)",
           }}
         >
-          N{90000}
+          ₦900,000
         </Typography>
       </Stack>
 

@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/[store]", "layouts/store.js", "layouts/store.js"  ],
+, "pages/_[store]", "layouts/store.js", "layouts/store.js"  ],
   "exclude": [
     "node_modules"
   ]
