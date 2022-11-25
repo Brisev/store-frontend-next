@@ -1,6 +1,7 @@
 import { Grid, Rating, Typography } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import ShopagoBox from "../Layout/ShopagoBox";
+import ReviewItem from "./ReviewItem";
 
 const Reviews = (props: any) => {
   return (
@@ -25,41 +26,11 @@ const Reviews = (props: any) => {
               lg={4}
               key={`${index}-${review.id}`}
             >
-              <Stack
-                direction="row"
-                gap={2}
-                alignItems="center"
-                justifyContent="space-between"
-              >
-                <Box>
-                  <Rating
-                    name="simple-controlled"
-                    size="small"
-                    value={review.rating}
-                    readOnly
-                  />
-                  <Typography
-                    mb={1}
-                    sx={{
-                      fontWeight: 700,
-                      color: "var(--text-1)",
-                      fontFamily: "Sansation",
-                    }}
-                  >
-                    {review.user}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontFamily: "inherit",
-                      color: "var(--text-2)",
-                      mb: 2,
-                      fontSize: "14px",
-                    }}
-                  >
-                    {review.message}
-                  </Typography>
-                </Box>
-              </Stack>
+              <ReviewItem
+                user={review.user}
+                rating={review.rating}
+                message={review.message}
+              />
             </Grid>
           ))}
         </Grid>

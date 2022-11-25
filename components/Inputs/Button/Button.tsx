@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 
 const StyledButton = styled(Button)(({ theme }) => ({
   padding: ".4rem 1rem",
-  borderRadius: ".5rem",
+  borderRadius: ".3rem",
   textTransform: "capitalize",
-  background: "primary",
-  color: "primary.main",
+  // background: "primary",
+  // color: "primary.main",
 }));
 
 interface ShopagoButtonProps extends ButtonProps {
@@ -46,7 +46,7 @@ const ShopagoButton = ({
           variant="contained"
           // size="small"
           // disableElevation
-          onClick={onClickFuntion}
+          // onClick={onClickFuntion}
         >
           {children}
         </StyledButton>

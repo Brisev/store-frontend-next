@@ -8,16 +8,18 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Badge } from "@mui/material";
 import {
+  Search,
   SearchOutlined,
   ShoppingBag,
   ShoppingBasket,
 } from "@mui/icons-material";
 import UseAutocomplete from "./NavSearch";
+// import { blue } from "@mui/material/colors";
 
 export default function NavigationBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" color="default">
+      <AppBar position="fixed" color="primary" elevation={0}>
         <Toolbar variant="dense">
           <IconButton
             size="large"
@@ -37,18 +39,36 @@ export default function NavigationBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" component="small" sx={{ flexGrow: 1 }}>
             Shopago
           </Typography>
-          <UseAutocomplete />
+
+          {/* <UseAutocomplete /> */}
+
+          <IconButton
+            sx={{
+              mr: -2,
+              display: {
+                xs: "inline",
+                sm: "none",
+                md: "none",
+                lg: "none",
+                xl: "none",
+              },
+            }}
+          >
+            <Search />
+          </IconButton>
           <Badge
             badgeContent={4}
-            color="primary"
+            color="error"
             sx={{
               ml: 2,
             }}
           >
-            <ShoppingBasket />
+            <IconButton href="/cart">
+              <ShoppingBasket />
+            </IconButton>
           </Badge>
         </Toolbar>
       </AppBar>
