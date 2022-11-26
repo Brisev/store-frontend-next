@@ -29,9 +29,45 @@ const HorizontalQuickProductList = ({ related, title }: any) => {
       itemsToShow = related.length;
     }
   }
+
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{
+          ...style,
+          display: "block",
+          background: "#000",
+          borderRadius: "100%",
+        }}
+        onClick={onClick}
+      />
+    );
+  }
+
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{
+          ...style,
+          display: "block",
+          background: "#000",
+          borderRadius: "100%",
+        }}
+        onClick={onClick}
+      />
+    );
+  }
   const settings = {
     slidesToShow: itemsToShow,
     swipeToSlide: true,
+    arrows: false,
+    infinite: false,
+    // nextArrow: <SampleNextArrow />,
+    // prevArrow: <SamplePrevArrow />,
   };
 
   return (

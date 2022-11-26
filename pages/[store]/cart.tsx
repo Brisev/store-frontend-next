@@ -10,10 +10,10 @@ import {
   Grid,
   Divider,
 } from "@mui/material";
-import CartItem from "../components/Cart/CartItem";
-import DUMMY_JSON from "../dummy/products.json";
-import StoreLayout from "../layouts/store";
-import CartSumarrySideBar from "../components/Cart/CartSummarySideBar";
+import CartItem from "../../components/Cart/CartItem";
+import DUMMY_JSON from "../../dummy/products.json";
+import StoreLayout from "../../layouts/store";
+import CartSumarrySideBar from "../../components/Cart/CartSummarySideBar";
 
 const Cart = () => {
   const cart = { items: DUMMY_JSON };
