@@ -10,7 +10,7 @@ const ReviewItem = ({ user, rating, message }) => {
       justifyContent="space-between"
     >
       <Box>
-        <Rating name="simple-controlled" size="small" value={rating} readOnly />
+        <Rating size="small" value={rating} readOnly />
         <Typography
           sx={{
             fontWeight: 700,
