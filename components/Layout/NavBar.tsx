@@ -66,7 +66,7 @@ export default function NavigationBar() {
               ml: 2,
             }}
           >
-            <IconButton href="/cart">
+            <IconButton href="/store/cart">
               <ShoppingBasket />
             </IconButton>
           </Badge>

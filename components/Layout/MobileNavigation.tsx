@@ -29,13 +29,22 @@ import {
   //   StoreOutlined,
 } from "@mui/icons-material";
 import AuthDialog from "../AuthModal";
+import { useRouter } from "next/router";
 
-const menus = [
+interface IMobileMenu {
+  title?: string;
+  icon?: React.ReactElement;
+  isLink?: boolean;
+  link?: string;
+  action?: string;
+}
+
+const menus: IMobileMenu[] = [
   {
     title: "Home",
     icon: <StorefrontOutlined />,
     isLink: true,
-    link: "/",
+    link: "/store",
   },
   {
     title: "Categories",
@@ -47,7 +56,7 @@ const menus = [
     title: "Orders",
     icon: <ShoppingBagOutlined />,
     isLink: true,
-    action: "/orders",
+    action: "/store/orders",
   },
   {
     title: "Account",
@@ -57,7 +66,52 @@ const menus = [
   },
 ];
 
-export default function MobileNavigation() {
+interface IAccountMenu {
+  title?: string;
+  icon?: React.ReactElement;
+  action?: string;
+  link?: string;
+  isLink?: boolean;
+  component?: React.ReactElement;
+}
+
+const accountMenu: IAccountMenu[] = [
+  {
+    title: "Saved Items",
+    icon: <Stars fontSize="small" />,
+    link: "/store/saved",
+    isLink: true,
+  },
+  {
+    title: "Recently viewed",
+    icon: <Preview fontSize="small" />,
+    link: "/store/recently-viewd",
+    isLink: true,
+  },
+  {
+    title: "Address Book",
+    icon: <MyLocationOutlined fontSize="small" />,
+    link: "/store/address-book",
+    isLink: true,
+  },
+  {
+    component: <Divider sx={{ my: 0.5 }} />,
+  },
+  {
+    title: "Account Management",
+    icon: <ManageAccountsOutlined fontSize="small" />,
+    link: "/store/account-update",
+    isLink: true,
+  },
+  {
+    title: "Logout",
+    icon: <Logout fontSize="small" />,
+    isLink: false,
+  },
+];
+
+function MobileNavigation() {
+  const router = useRouter();
   const [value, setValue] = React.useState("Home");
   const [showModal, setshowModal] = React.useState(false);
 
@@ -68,11 +122,37 @@ export default function MobileNavigation() {
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleMenuAction = (
+    e: React.MouseEvent<HTMLElement>,
+    action: string
+  ) => {
+    if (action === "OPEN_ACCOUNT_MODAL") {
+      handleClick(e);
+    }
+  };
+
+  const handleMenuItemClicked = (
+    e: React.MouseEvent<HTMLElement>,
+    menu: IMobileMenu
+  ) => {
+    const authenticated = true;
+    if (true) {
+      if (menu.isLink) {
+        router.push(menu.link);
+      } else {
+        handleMenuAction(e, menu.action);
+      }
+    } else {
+    }
   };
 
   return (
@@ -110,46 +190,19 @@ export default function MobileNavigation() {
             },
           },
         }}
-        // transformOrigin={{ horizontal: "right", vertical: "top" }}
-        // anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <MenuItem>
-          <ListItemIcon>
-            <LocalMall />
-          </ListItemIcon>
-          Orders
-        </MenuItem>
-        <MenuItem>
-          <ListItemIcon>
-            <Stars />
-          </ListItemIcon>
-          Saved Items
-        </MenuItem>
-        <MenuItem>
-          <ListItemIcon>
-            <Preview />
-          </ListItemIcon>
-          Recently viewed
-        </MenuItem>
-        <Divider />
-        <MenuItem>
-          <ListItemIcon>
-            <MyLocationOutlined fontSize="small" />
-          </ListItemIcon>
-          Address Book
-        </MenuItem>
-        <MenuItem>
-          <ListItemIcon>
-            <ManageAccountsOutlined fontSize="small" />
-          </ListItemIcon>
-          Account Management
-        </MenuItem>
-        <MenuItem>
-          <ListItemIcon>
-            <Logout fontSize="small" />
-          </ListItemIcon>
-          Logout
-        </MenuItem>
+        {accountMenu.map((menu: IAccountMenu, index: number) => {
+          if (menu.component) return <>{menu.component}</>;
+          return (
+            <MenuItem
+              onClick={(e) => handleMenuItemClicked(e, menu)}
+              key={`mobile_menu_${index}`}
+            >
+              <ListItemIcon>{menu.icon}</ListItemIcon>
+              {menu.title}
+            </MenuItem>
+          );
+        })}
       </Menu>
 
       <AuthDialog open={showModal} handleClose={handleMenuClick} />
@@ -178,10 +231,10 @@ export default function MobileNavigation() {
             setValue(newValue);
           }}
         >
-          {menus.map((menu, index) => {
+          {menus.map((menu: IMobileMenu, index: number) => {
             return (
               <BottomNavigationAction
-                onClick={handleClick}
+                onClick={(e) => handleMenuItemClicked(e, menu)}
                 aria-controls={open ? "account-menu" : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? "true" : undefined}
@@ -196,3 +249,5 @@ export default function MobileNavigation() {
     </>
   );
 }
+
+export default React.memo(MobileNavigation);
