@@ -7,6 +7,7 @@ const StoreLayoutDiv = styled("div")(({ theme }) => ({
   background: "#f5f5f5",
   paddingTop: "4rem",
   paddingBottom: "8rem",
+  height: "100vh",
 }));
 
 export default function StoreLayout({ children }) {

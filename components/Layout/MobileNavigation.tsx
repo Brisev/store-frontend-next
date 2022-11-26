@@ -7,6 +7,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import {
   Avatar,
+  Backdrop,
   Divider,
   ListItemIcon,
   Menu,
@@ -16,6 +17,8 @@ import {
 import {
   AccountCircleOutlined,
   ChromeReaderModeOutlined,
+  ErrorOutline,
+  ErrorOutlined,
   LocalMall,
   Logout,
   ManageAccountsOutlined,
@@ -56,7 +59,7 @@ const menus: IMobileMenu[] = [
     title: "Orders",
     icon: <ShoppingBagOutlined />,
     isLink: true,
-    action: "/store/orders",
+    link: "/store/orders",
   },
   {
     title: "Account",
@@ -103,6 +106,12 @@ const accountMenu: IAccountMenu[] = [
     link: "/store/account-update",
     isLink: true,
   },
+  // {
+  //   title: "Report a bug",
+  //   icon: <ErrorOutlined fontSize="small" />,
+  //   link: "/store/feedback",
+  //   isLink: true,
+  // },
   {
     title: "Logout",
     icon: <Logout fontSize="small" />,
@@ -157,53 +166,59 @@ function MobileNavigation() {
 
   return (
     <>
-      <Menu
-        anchorEl={anchorEl}
-        id="account-menu"
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
         open={open}
-        onClose={handleClose}
         onClick={handleClose}
-        PaperProps={{
-          elevation: 0,
-          sx: {
-            overflow: "visible",
-            filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
-            mt: -5,
-            // mb: 30,
-            "& .MuiAvatar-root": {
-              width: 32,
-              height: 32,
-              ml: -0.5,
-              mr: 1,
-            },
-            "&:after": {
-              content: '""',
-              display: "block",
-              position: "absolute",
-              bottom: 0,
-              right: 20,
-              width: 10,
-              height: 10,
-              bgcolor: "background.paper",
-              transform: "translateY(45%) rotate(-45deg)",
-              zIndex: 0,
-            },
-          },
-        }}
       >
-        {accountMenu.map((menu: IAccountMenu, index: number) => {
-          if (menu.component) return <>{menu.component}</>;
-          return (
-            <MenuItem
-              onClick={(e) => handleMenuItemClicked(e, menu)}
-              key={`mobile_menu_${index}`}
-            >
-              <ListItemIcon>{menu.icon}</ListItemIcon>
-              {menu.title}
-            </MenuItem>
-          );
-        })}
-      </Menu>
+        <Menu
+          anchorEl={anchorEl}
+          id="account-menu"
+          open={open}
+          onClose={handleClose}
+          onClick={handleClose}
+          PaperProps={{
+            elevation: 0,
+            sx: {
+              overflow: "visible",
+              filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+              mt: -5,
+              // mb: 30,
+              "& .MuiAvatar-root": {
+                width: 32,
+                height: 32,
+                ml: -0.5,
+                mr: 1,
+              },
+              "&:after": {
+                content: '""',
+                display: "block",
+                position: "absolute",
+                bottom: 0,
+                right: 20,
+                width: 10,
+                height: 10,
+                bgcolor: "background.paper",
+                transform: "translateY(45%) rotate(-45deg)",
+                zIndex: 0,
+              },
+            },
+          }}
+        >
+          {accountMenu.map((menu: IAccountMenu, index: number) => {
+            if (menu.component) return <>{menu.component}</>;
+            return (
+              <MenuItem
+                onClick={(e) => handleMenuItemClicked(e, menu)}
+                key={`mobile_menu_${index}`}
+              >
+                <ListItemIcon>{menu.icon}</ListItemIcon>
+                {menu.title}
+              </MenuItem>
+            );
+          })}
+        </Menu>
+      </Backdrop>
 
       <AuthDialog open={showModal} handleClose={handleMenuClick} />
       <Paper
