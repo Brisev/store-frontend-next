@@ -10,7 +10,7 @@ const CartSumarrySideBar = () => {
         backgroundColor: "white",
         position: "sticky",
         width: 400,
-        top: 154,
+        top: 75,
       }}
     >
       <Stack

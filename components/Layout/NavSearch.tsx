@@ -8,14 +8,14 @@ const Label = styled("label")({
 });
 
 const Input = styled("input")(({ theme }) => ({
-  width: 600,
-  height: 30,
+  width: 400,
+  height: 35,
   fontSize: "17px",
   //   alignContent: "center",
   //   margin: ,
   alignSelf: "center",
   border: "1px solid rgba(0,0,0,.25)",
-  //   borderRadius: "1rem",
+  borderRadius: "0.4rem",
   backgroundColor: theme.palette.mode === "light" ? "#fff" : "#000",
   color: theme.palette.mode === "light" ? "#000" : "#fff",
   display: "flex",
@@ -73,7 +73,10 @@ export default function UseAutocomplete() {
     >
       <div {...getRootProps()}>
         {/* <Label {...getInputLabelProps()}>useAutocomplete</Label> */}
-        <Input {...getInputProps()} />
+        <Input
+          {...getInputProps()}
+          placeholder="Search products, categories and brands"
+        />
       </div>
       {groupedOptions.length > 0 ? (
         <Listbox {...getListboxProps()}>

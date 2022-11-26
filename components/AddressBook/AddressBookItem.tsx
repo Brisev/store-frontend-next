@@ -3,7 +3,7 @@ import { Card, CardContent, IconButton, Typography } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import { memo } from "react";
 
-const AddressBookItem = () => {
+const AddressBookItem = ({ onDeleteAddress }) => {
   return (
     <Card
       sx={{
@@ -30,7 +30,7 @@ const AddressBookItem = () => {
             <IconButton size="small" color="warning">
               <EditLocationAlt fontSize="small" />
             </IconButton>
-            <IconButton size="small" color="error">
+            <IconButton size="small" color="error" onClick={onDeleteAddress}>
               <Delete fontSize="small" />
             </IconButton>
           </Box>

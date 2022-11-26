@@ -195,9 +195,9 @@ const ProductDetails = () => {
               height: "auto",
               backgroundColor: "white",
               position: "sticky",
-              top: 60,
+              top: 70,
               padding: "0.5rem",
-              paddingTop: "1rem",
+              // paddingTop: "1rem",
             }}
           >
             <ProductVariation />

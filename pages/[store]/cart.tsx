@@ -37,10 +37,9 @@ const Cart = () => {
   return (
     <>
       <Typography
-        variant="h4"
+        variant="h5"
         sx={{
-          fontWeight: 600,
-          pt: "1rem",
+          fontWeight: 700,
           pb: "2rem",
         }}
       >

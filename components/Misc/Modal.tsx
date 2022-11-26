@@ -13,6 +13,7 @@ interface IModal extends DialogProps {
   open: boolean;
   okText?: string;
   cancelText?: string;
+  header?: string;
   children?: React.ReactElement | React.ReactElement[];
 }
 
@@ -21,6 +22,7 @@ export default function Modal({
   onClose,
   okText,
   cancelText,
+  header,
   children,
   ...rest
 }: IModal) {
@@ -29,17 +31,30 @@ export default function Modal({
       {open && (
         <ClientOnlyPortal selector="#modals">
           <Dialog {...rest} open={open} onClose={onClose}>
-            <DialogTitle>Login</DialogTitle>
-            <DialogContent>
-              {children}
-              {cancelText ||
-                (okText && (
-                  <DialogActions>
-                    <Button>{cancelText}</Button>
-                    <Button>{okText}</Button>
-                  </DialogActions>
-                ))}
-            </DialogContent>
+            <DialogTitle
+              sx={{
+                fontWeight: 600,
+                fontSize: 17,
+              }}
+            >
+              {header}
+            </DialogTitle>
+            <DialogContent>{children}</DialogContent>
+            {/* {cancelText ||
+              (okText && ( */}
+            <DialogActions
+              sx={{
+                mb: 1,
+              }}
+            >
+              <Button variant="text" color="error" disableElevation>
+                {cancelText}
+              </Button>
+              <Button variant="text" color="primary" disableElevation>
+                {okText}
+              </Button>
+            </DialogActions>
+            {/* ))} */}
           </Dialog>
         </ClientOnlyPortal>
       )}
