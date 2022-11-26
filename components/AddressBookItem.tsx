@@ -38,12 +38,20 @@ const AddressBookItem = () => {
         <Box mt={3} display="flex" flexDirection="row">
           <CheckCircle
             color="success"
-            fontSize=""
+            fontSize="small"
             sx={{
               mr: 1,
+              fontSize: "15px",
             }}
           />
-          <Typography variant="caption">Primary Shipping Address</Typography>
+          <Typography
+            variant="caption"
+            sx={{
+              mt: -0.2,
+            }}
+          >
+            Primary Shipping Address
+          </Typography>
         </Box>
       </CardContent>
     </Card>
