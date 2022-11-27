@@ -27,23 +27,24 @@ const AddressBook = () => {
           Are you sure want to remove this Address? This cannot be reversed
         </Typography>
       </Modal>
+      <Typography
+        variant="h5"
+        sx={{
+          fontWeight: 700,
+          // pb: "2rem",
+        }}
+      >
+        Address book
+      </Typography>
+
       <Stack
         display="flex"
         flexDirection="row"
-        justifyContent="space-between"
-        mb={3}
+        justifyContent="end"
+        mb={1}
+        // mt={1}
       >
-        <Typography
-          variant="h5"
-          sx={{
-            fontWeight: 700,
-            // pb: "2rem",
-          }}
-        >
-          Address book
-        </Typography>
-
-        <Button sx={{ mt: -0.5 }}>Add Address</Button>
+        <Button href="/store/address-book/create">Add Address</Button>
       </Stack>
 
       <Grid

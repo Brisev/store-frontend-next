@@ -14,7 +14,7 @@ import navLogo from "../../assets/nav-logo.svg";
 
 export default function NavigationBar() {
   return (
-    <Box sx={{ flexGrow: 1, marginBottom: "1rem" }}>
+    <Box sx={{ flexGrow: 1, marginBottom: "1.5rem" }}>
       <AppBar
         position="fixed"
         sx={{
@@ -25,7 +25,7 @@ export default function NavigationBar() {
       >
         <Container>
           <Toolbar>
-            <IconButton
+            {/* <IconButton
               size="medium"
               sx={{
                 // mr: 2,
@@ -40,7 +40,7 @@ export default function NavigationBar() {
               }}
             >
               <MenuIcon />
-            </IconButton>
+            </IconButton> */}
             {/* <span>
               <img
                 src={navLogo}
@@ -49,7 +49,7 @@ export default function NavigationBar() {
               />
             </span> */}
 
-            <UseAutocomplete />
+            {/* <UseAutocomplete /> */}
 
             {/* <IconButton
               sx={{
@@ -77,7 +77,7 @@ export default function NavigationBar() {
                 <ShoppingBasket />
               </IconButton>
             </Badge> */}
-
+            {/* 
             <IconButton
               sx={{
                 ml: 1,
@@ -92,7 +92,7 @@ export default function NavigationBar() {
               }}
             >
               <AccountCircle />
-            </IconButton>
+            </IconButton> */}
           </Toolbar>
         </Container>
       </AppBar>
