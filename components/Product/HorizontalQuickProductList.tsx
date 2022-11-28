@@ -1,4 +1,10 @@
-import { Typography, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 // import { SwiperSlide, Swiper } from "swiper/react";
 import { ProductCard } from "./productCard";
 
@@ -6,6 +12,7 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Link from "next/link";
 
 // import "swiper/css";
 
@@ -13,12 +20,23 @@ import { FreeMode, Pagination } from "swiper";
 import ShopagoBox from "../Layout/ShopagoBox";
 // import { useTheme } from "@emotion/react";
 
-const HorizontalQuickProductList = ({ related, title }: any) => {
+interface IHorizontalQuickProductList {
+  related: any;
+  title: string;
+  seeMoreLink?: string;
+}
+
+const HorizontalQuickProductList = ({
+  related,
+  title,
+  seeMoreLink,
+}: IHorizontalQuickProductList) => {
   related = related.slice(0, 5);
   const theme = useTheme();
   const isSmDown = useMediaQuery(theme.breakpoints.down("sm"));
   const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
-  let itemsToShow = isSmDown ? 2 : isMdUp ? 4 : null;
+  let itemsToShow = 2; // default for mobile
+  if (isMdUp) itemsToShow = 4;
   if (isMdUp) {
     if (related.length <= 4) {
       itemsToShow = related.length;
@@ -61,6 +79,7 @@ const HorizontalQuickProductList = ({ related, title }: any) => {
       />
     );
   }
+
   const settings = {
     slidesToShow: itemsToShow,
     swipeToSlide: true,
@@ -72,9 +91,18 @@ const HorizontalQuickProductList = ({ related, title }: any) => {
 
   return (
     <ShopagoBox>
-      <Typography variant="h6" component="p" mb={2} mt={0}>
-        {title}
-      </Typography>
+      <Box display="flex" flexDirection="row" justifyContent="space-between">
+        <Typography variant="h6" fontWeight={500} mb={2} mt={0}>
+          {title}
+        </Typography>
+        <div>
+          {seeMoreLink && (
+            <Button variant="text" size="small" href={seeMoreLink}>
+              See more
+            </Button>
+          )}
+        </div>
+      </Box>
       <Slider {...settings}>
         {related.map((item: any, index: number) => (
           <ProductCard

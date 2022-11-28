@@ -206,7 +206,8 @@ function MobileNavigation() {
           }}
         >
           {accountMenu.map((menu: IAccountMenu, index: number) => {
-            if (menu.component) return <>{menu.component}</>;
+            if (menu.component)
+              return <div key={`divider_${index}`}>{menu.component}</div>;
             return (
               <MenuItem
                 onClick={(e) => handleMenuItemClicked(e, menu)}

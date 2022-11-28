@@ -4,7 +4,9 @@ import { Fragment, ReactElement, useState } from "react";
 // import { Grid } from "swiper";
 import AddressBookItem from "../../../components/AddressBook/AddressBookItem";
 import Modal from "../../../components/Misc/Modal";
+import HorizontalQuickProductList from "../../../components/Product/HorizontalQuickProductList";
 import StoreLayout from "../../../layouts/store";
+import DUMMY_JSON from "../../../dummy/products.json";
 
 const AddressBook = () => {
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
@@ -53,6 +55,7 @@ const AddressBook = () => {
         columnSpacing={{ xs: 0, sm: 2, md: 1 }}
         columns={{ xs: 4, sm: 6, md: 8, lg: 12 }}
         mx="auto"
+        mb={8}
       >
         {[1, 2, 3].map((address, index) => {
           return (
@@ -62,6 +65,8 @@ const AddressBook = () => {
           );
         })}
       </Grid>
+
+      <HorizontalQuickProductList title="Recently seen" related={DUMMY_JSON} />
     </Fragment>
   );
 };

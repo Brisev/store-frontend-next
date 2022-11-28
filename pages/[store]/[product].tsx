@@ -212,7 +212,11 @@ const ProductDetails = () => {
         title="You may also like"
         related={DUMMY_JSON}
       />
-      <HorizontalQuickProductList title="Recently seen" related={DUMMY_JSON} />
+      <HorizontalQuickProductList
+        title="Recently seen"
+        related={DUMMY_JSON}
+        seeMoreLink="/store/recently-viewd"
+      />
     </Fragment>
   );
 };

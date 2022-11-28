@@ -8,12 +8,25 @@ const StyledProducts = styled("section")(({ theme }) => ({
   margin: "auto",
 }));
 
-const Products = () => {
+interface IPRODUCT_LIST {
+  title?: string;
+  sx?: Object;
+}
+
+const Products = ({ title, sx }: IPRODUCT_LIST) => {
   return (
     <StyledProducts
       sx={{
         paddingTop: { xs: "1rem", md: "1rem" },
         paddingBottom: "1rem",
+        backgroundColor: {
+          xs: "inherit",
+          lg: "white",
+          md: "white",
+          sm: "white",
+          xl: "white",
+        },
+        ...sx,
       }}
     >
       <Typography
@@ -23,7 +36,7 @@ const Products = () => {
         mb={4}
         px={2}
       >
-        Featured Products
+        {title}
       </Typography>
       <Grid
         container

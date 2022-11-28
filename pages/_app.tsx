@@ -32,7 +32,7 @@ export default function App(props: AppPropsWithLayout) {
   return getLayout(
     <CacheProvider value={emotionCache}>
       <Head>
-        <meta name="theme-color" content="#f0f0f0" />
+        <meta name="theme-color" content="#000000" />
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={theme}>

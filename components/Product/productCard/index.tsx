@@ -50,8 +50,8 @@ export const ProductCard = (props: PRODUCT_CARD) => {
         <Typography
           mb={1}
           sx={{
-            fontSize: "13px",
-            fontWeight: 600,
+            fontSize: "14px",
+            fontWeight: 500,
             mt: -1,
             // color: "var(--text-1)",
           }}
@@ -74,12 +74,12 @@ export const ProductCard = (props: PRODUCT_CARD) => {
           <Typography
             sx={{
               fontSize: "13px",
-              fontWeight: 500,
+              fontWeight: 400,
               mt: -1,
               color: "var(--text-1)",
             }}
           >
-            N
+            ₦
             {
               calculateProductDiscount(
                 price,
@@ -91,13 +91,14 @@ export const ProductCard = (props: PRODUCT_CARD) => {
           <Typography
             sx={{
               textDecoration: "line-through",
+              fontSize: "12px",
               fontWeight: 400,
               mt: -1,
               color: "grey",
-              fontSize: { xs: "12px", sm: "12px", md: "11px" },
+              // fontSize: { xs: "12px", sm: "12px", md: "11px" },
             }}
           >
-            N
+            ₦
             {
               calculateProductDiscount(
                 price,
@@ -111,12 +112,12 @@ export const ProductCard = (props: PRODUCT_CARD) => {
 
       {showActionButtons && (
         <CardActions sx={{ justifyContent: "space-between" }}>
-          <ShopagoButton>
+          <ShopagoButton size="small">
             <>Add to cart</>
           </ShopagoButton>
           <IconButton
             aria-label="favourite"
-            sx={{ border: "1px solid var(--text-4)" }}
+            sx={{ border: "0.1px solid #c2c2c2" }}
             size="small"
           >
             <FavoriteSharp />
