@@ -117,7 +117,7 @@ export const ProductCard = (props: PRODUCT_CARD) => {
           </ShopagoButton>
           <IconButton
             aria-label="favourite"
-            sx={{ border: "0.1px solid #c2c2c2" }}
+            sx={{ border: "0.1px solid #D5D5DE" }}
             size="small"
           >
             <FavoriteSharp />

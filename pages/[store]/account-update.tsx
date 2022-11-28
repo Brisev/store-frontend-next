@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 import StoreLayout from "../../layouts/store";
 
 const AccountManagement = () => {
-  return <>address book</>;
+  return <>Account management coming soon</>;
 };
 
 AccountManagement.getLayout = (page: ReactElement) => (

@@ -20,7 +20,7 @@ import React from "react";
 
 import Button from "@mui/material/Button";
 
-const CartItem = (props: any) => {
+const OrderItem = (props: any) => {
   const variations = [];
 
   for (const key in props.item.variation) {
@@ -42,53 +42,35 @@ const CartItem = (props: any) => {
         <Box sx={{ display: "flex", flexDirection: "column" }}>
           <CardContent sx={{ flex: "1 0 auto" }}>
             <Typography sx={{ fontWeight: 400 }}>{props.item.name}</Typography>
-            {props.type === "order" && (
-              <Typography sx={{ fontWeight: 400, fontSize: 12, color: "grey" }}>
-                Order: #849443839393303849
-              </Typography>
-            )}
             <Typography sx={{ fontWeight: 400, fontSize: 12, color: "grey" }}>
               RAM: 32GB
             </Typography>
             <Typography
               sx={{
-                fontWeight: 400,
-                fontSize: 14,
-                mt: 1,
+                fontWeight: 600,
               }}
             >
               ₦{props.item.price.toLocaleString()}
             </Typography>
             {/* <Typography
-              sx={{
-                fontSize: "13px",
-                textDecoration: "line-through",
-                color: "grey",
-              }}
-            >
-              ₦900,000
-            </Typography> */}
+                sx={{
+                  fontSize: "13px",
+                  textDecoration: "line-through",
+                  color: "grey",
+                }}
+              >
+                ₦900,000
+              </Typography> */}
           </CardContent>
         </Box>
       </Box>
       <Box textAlign="right" sx={{ mt: -3, pb: 1, pr: 1 }}>
-        {props.type === "order" ? (
-          <Button size="small" disableElevation variant="outlined">
-            Buy Again
-          </Button>
-        ) : (
-          <ButtonGroup size="small" disableElevation variant="outlined">
-            <Button>
-              <DeleteRounded fontSize="small" color="error" />
-            </Button>
-            <Button>-{/* <RemoveCircleRounded fontSize="small" /> */}</Button>
-            <Button>9</Button>
-            <Button>+{/* <AddCircleRounded fontSize="small" /> */}</Button>
-          </ButtonGroup>
-        )}
+        <Button size="small" disableElevation variant="outlined">
+          Buy Again
+        </Button>
       </Box>
     </Card>
   );
 };
 
-export default CartItem;
+export default OrderItem;

@@ -13,7 +13,8 @@ const ReviewItem = ({ user, rating, message }) => {
         <Rating size="small" value={rating} readOnly />
         <Typography
           sx={{
-            fontWeight: 700,
+            fontWeight: 500,
+            fontSize: "14px",
           }}
         >
           {user}
@@ -33,7 +34,7 @@ const ReviewItem = ({ user, rating, message }) => {
             fontFamily: "inherit",
             color: "var(--text-2)",
             mb: 2,
-            fontSize: "14px",
+            fontSize: "13.5px",
           }}
         >
           {message}
