@@ -66,7 +66,11 @@ const AddressBook = () => {
         })}
       </Grid>
 
-      <HorizontalQuickProductList title="Recently seen" related={DUMMY_JSON} />
+      <HorizontalQuickProductList
+        title="Recently seen"
+        related={DUMMY_JSON}
+        seeMoreLink="/store/saved"
+      />
     </Fragment>
   );
 };
