@@ -31,7 +31,16 @@ export default function MenuAppBar() {
               edge="start"
               // color="action"
               aria-label="menu"
-              sx={{ mr: 2 }}
+              sx={{
+                mr: 2,
+                display: {
+                  xs: "none",
+                  sm: "inline",
+                  md: "inline",
+                  lg: "inline",
+                  xl: "inline",
+                },
+              }}
             >
               <MenuIcon />
             </IconButton>
