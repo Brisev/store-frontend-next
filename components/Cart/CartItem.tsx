@@ -41,12 +41,12 @@ const CartItem = (props: any) => {
         />
         <Box sx={{ display: "flex", flexDirection: "column" }}>
           <CardContent sx={{ flex: "1 0 auto" }}>
-            <Typography sx={{ fontWeight: 400 }}>{props.item.name}</Typography>
             {props.type === "order" && (
               <Typography sx={{ fontWeight: 400, fontSize: 12, color: "grey" }}>
                 Order: #849443839393303849
               </Typography>
             )}
+            <Typography sx={{ fontWeight: 400 }}>{props.item.name}</Typography>
             <Typography sx={{ fontWeight: 400, fontSize: 12, color: "grey" }}>
               RAM: 32GB
             </Typography>
