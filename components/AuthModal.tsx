@@ -5,7 +5,7 @@ import Modal from "./Misc/Modal";
 
 export default function AuthDialog({ open, handleClose }) {
   return (
-    <Modal open={open} onClose={handleClose}>
+    <Modal open={open} onHandleCloseModal={handleClose}>
       <TextField
         id="outlined-basic"
         type="email"
