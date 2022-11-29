@@ -33,6 +33,7 @@ import {
 } from "@mui/icons-material";
 import AuthDialog from "../AuthModal";
 import { useRouter } from "next/router";
+import AccountMenu from "./AccountMenu";
 
 interface IMobileMenu {
   title?: string;
@@ -66,56 +67,6 @@ const menus: IMobileMenu[] = [
     icon: <AccountCircleOutlined />,
     isLink: false,
     action: "OPEN_ACCOUNT_MODAL",
-  },
-];
-
-interface IAccountMenu {
-  title?: string;
-  icon?: React.ReactElement;
-  action?: string;
-  link?: string;
-  isLink?: boolean;
-  component?: React.ReactElement;
-}
-
-const accountMenu: IAccountMenu[] = [
-  {
-    title: "Saved Items",
-    icon: <Stars fontSize="small" />,
-    link: "/store/saved",
-    isLink: true,
-  },
-  {
-    title: "Recently viewed",
-    icon: <Preview fontSize="small" />,
-    link: "/store/recently-viewd",
-    isLink: true,
-  },
-  {
-    title: "Address Book",
-    icon: <MyLocationOutlined fontSize="small" />,
-    link: "/store/address-book",
-    isLink: true,
-  },
-  {
-    component: <Divider sx={{ my: 0.5 }} />,
-  },
-  {
-    title: "Account Management",
-    icon: <ManageAccountsOutlined fontSize="small" />,
-    link: "/store/account-update",
-    isLink: true,
-  },
-  // {
-  //   title: "Report a bug",
-  //   icon: <ErrorOutlined fontSize="small" />,
-  //   link: "/store/feedback",
-  //   isLink: true,
-  // },
-  {
-    title: "Logout",
-    icon: <Logout fontSize="small" />,
-    isLink: false,
   },
 ];
 
@@ -171,54 +122,34 @@ function MobileNavigation() {
         open={open}
         onClick={handleClose}
       >
-        <Menu
-          anchorEl={anchorEl}
-          id="account-menu"
-          open={open}
-          onClose={handleClose}
-          onClick={handleClose}
-          PaperProps={{
-            elevation: 0,
-            sx: {
-              overflow: "visible",
-              filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
-              mt: -5,
-              // mb: 30,
-              "& .MuiAvatar-root": {
-                width: 32,
-                height: 32,
-                ml: -0.5,
-                mr: 1,
-              },
-              "&:after": {
-                content: '""',
-                display: "block",
-                position: "absolute",
-                bottom: 0,
-                right: 20,
-                width: 10,
-                height: 10,
-                bgcolor: "background.paper",
-                transform: "translateY(45%) rotate(-45deg)",
-                zIndex: 0,
-              },
+        <AccountMenu
+          sk={{
+            mt: -5,
+            // mb: 30,
+            "& .MuiAvatar-root": {
+              width: 32,
+              height: 32,
+              ml: -0.5,
+              mr: 1,
+            },
+            "&:after": {
+              content: '""',
+              display: "block",
+              position: "absolute",
+              bottom: 0,
+              right: 20,
+              width: 10,
+              height: 10,
+              bgcolor: "background.paper",
+              transform: "translateY(45%) rotate(-45deg)",
+              zIndex: 0,
             },
           }}
-        >
-          {accountMenu.map((menu: IAccountMenu, index: number) => {
-            if (menu.component)
-              return <div key={`divider_${index}`}>{menu.component}</div>;
-            return (
-              <MenuItem
-                onClick={(e) => handleMenuItemClicked(e, menu)}
-                key={`mobile_menu_${index}`}
-              >
-                <ListItemIcon>{menu.icon}</ListItemIcon>
-                {menu.title}
-              </MenuItem>
-            );
-          })}
-        </Menu>
+          handleClick={handleClick}
+          anchorEl={anchorEl}
+          open={open}
+          handleClose={handleClose}
+        />
       </Backdrop>
 
       <AuthDialog open={showModal} handleClose={handleMenuClick} />

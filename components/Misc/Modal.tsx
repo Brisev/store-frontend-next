@@ -53,12 +53,23 @@ export default function Modal({
             <DialogTitle
               sx={{
                 fontWeight: 600,
+                padding: {
+                  xs: 2,
+                },
                 fontSize: 17,
               }}
             >
               {header}
             </DialogTitle>
-            <DialogContent>{children}</DialogContent>
+            <DialogContent
+              sx={{
+                padding: {
+                  xs: 2,
+                },
+              }}
+            >
+              {children}
+            </DialogContent>
             {/* {cancelText ||
               (okText && ( */}
             <DialogActions

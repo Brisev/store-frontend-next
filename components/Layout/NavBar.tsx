@@ -11,12 +11,69 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormGroup from "@mui/material/FormGroup";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-import { Badge, Container } from "@mui/material";
-import { Search, ShoppingBasket, ShoppingCart } from "@mui/icons-material";
+import { Badge, Container, Divider, ListItemIcon } from "@mui/material";
+import {
+  AccountCircleOutlined,
+  ChromeReaderModeOutlined,
+  ErrorOutline,
+  ErrorOutlined,
+  LocalMall,
+  Logout,
+  ManageAccountsOutlined,
+  // MyLocationOutlined,
+  PersonAdd,
+  Preview,
+  Settings,
+  ShoppingBagOutlined,
+  Stars,
+  StorefrontOutlined,
+  //   StoreOutlined,
+} from "@mui/icons-material";
+import {
+  MyLocationOutlined,
+  Search,
+  ShoppingBasket,
+  ShoppingCart,
+} from "@mui/icons-material";
+import AccountMenu from "./AccountMenu";
 
 export default function MenuAppBar() {
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <Box sx={{ flexGrow: 1, marginBottom: "1.5rem" }}>
+      <AccountMenu
+        sk={{
+          mt: 0.5,
+          ml: -19.5,
+          "&:after": {
+            content: '""',
+            display: "block",
+            position: "absolute",
+            top: 0,
+            right: 20,
+            width: 10,
+            height: 10,
+            bgcolor: "background.paper",
+            transform: "translateY(-45%) rotate(45deg)",
+            zIndex: 0,
+          },
+        }}
+        handleClick={handleClick}
+        anchorEl={anchorEl}
+        open={open}
+        handleClose={handleClose}
+      />
+
       <AppBar
         position="fixed"
         sx={{
@@ -96,7 +153,7 @@ export default function MenuAppBar() {
                   },
                 }}
               >
-                <IconButton>
+                <IconButton onClick={(e) => handleClick(e)}>
                   <AccountCircle fontSize="small" />
                 </IconButton>
               </Box>
