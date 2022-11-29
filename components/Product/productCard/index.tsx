@@ -29,6 +29,7 @@ export interface PRODUCT_CARD {
   offer?: OFFER;
   productDiscountType?: string;
   productDiscount?: number;
+  showHoverShadow?: boolean;
 }
 
 export const ProductCard = (props: PRODUCT_CARD) => {
@@ -44,6 +45,7 @@ export const ProductCard = (props: PRODUCT_CARD) => {
     showActionButtons = true,
     productDiscountType,
     productDiscount,
+    showHoverShadow,
   } = props;
   return (
     <Card
@@ -53,7 +55,7 @@ export const ProductCard = (props: PRODUCT_CARD) => {
         boxShadow: "none",
         cursor: "pointer",
         ":hover": {
-          boxShadow: 2,
+          boxShadow: showHoverShadow ? 2 : "none",
         },
       }}
     >
@@ -81,7 +83,15 @@ export const ProductCard = (props: PRODUCT_CARD) => {
 
       {showActionButtons && (
         <CardActions sx={{ justifyContent: "space-between" }}>
-          <ShopagoButton size="small">
+          <ShopagoButton
+            size="small"
+            // sx={{
+            //   display: "none",
+            //   ":hover": {
+            //     display: "block",
+            //   },
+            // }}
+          >
             <>Add to cart</>
           </ShopagoButton>
           <IconButton

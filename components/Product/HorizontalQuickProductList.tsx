@@ -92,12 +92,17 @@ const HorizontalQuickProductList = ({
   return (
     <ShopagoBox>
       <Box display="flex" flexDirection="row" justifyContent="space-between">
-        <Typography variant="h6" fontWeight={500} mb={2} mt={0}>
+        <Typography variant="h6" fontSize={16} fontWeight={600} mb={2} mt={0}>
           {title}
         </Typography>
         <div>
           {seeMoreLink && (
-            <Button variant="text" size="small" href={seeMoreLink}>
+            <Button
+              variant="text"
+              size="small"
+              sx={{ fontSize: 13, mt: -0.5, textTransform: "capitalize" }}
+              href={seeMoreLink}
+            >
               See more
             </Button>
           )}

@@ -52,6 +52,7 @@ const Products = ({ title, sx }: IPRODUCT_LIST) => {
           <Grid item xs={2} sm={3} md={2} lg={3} key={`${index}-${product.id}`}>
             <ProductCard
               id={product.id}
+              showHoverShadow
               name={product.name}
               price={product.price}
               media={product.resources[0].file}

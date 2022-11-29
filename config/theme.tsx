@@ -13,13 +13,22 @@ export const roboto = Poppins({
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#5A72EF",
+      // main: "#5A72EF",
+      main: "#03045e",
     },
     secondary: {
       main: "#ffc20e",
     },
     error: {
       main: red.A400,
+    },
+    text: {
+      primary: "#2b2b2b",
+      secondary: "#2b2b2b",
+    },
+    action: {
+      // active: "#03045e",
+      // inactive: "#f0ff0f",
     },
   },
   typography: {

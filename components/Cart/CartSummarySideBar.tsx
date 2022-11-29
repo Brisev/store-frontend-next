@@ -92,7 +92,7 @@ const CartSumarrySideBar = () => {
       </Stack>
 
       <Box px="1rem" pt="0.3rem">
-        <ShopagoButton fullWidth size="large" sx={{}}>
+        <ShopagoButton fullWidth size="large" sx={{}} href="/store/checkout">
           <>CHECKOUT</>
         </ShopagoButton>
       </Box>

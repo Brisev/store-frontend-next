@@ -7,7 +7,7 @@ import ReviewSummary from "./ReviewSummary";
 const Reviews = (props: any) => {
   return (
     <ShopagoBox>
-      <Typography variant="h6" fontWeight={500} mb={3} mt={1}>
+      <Typography variant="h6" fontSize={16} fontWeight={600} mb={3} mt={1}>
         Product Reviews
       </Typography>
       {props.reviews.length > 0 ? (
