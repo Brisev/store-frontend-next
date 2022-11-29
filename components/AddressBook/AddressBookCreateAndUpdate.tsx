@@ -1,55 +1,61 @@
-// import { TextInput } from "../Inputs/TextInput";
-
-import { Grid, TextField } from "@mui/material";
-import { Stack } from "@mui/system";
-// import { ShopagoSelect, StyledOption } from "../Inputs/Select";
-// import TextInput from "../Inputs/TextInput";
+import { Box, Button, Grid, TextField } from "@mui/material";
 
 const AddressBookCreateAndUpdate = () => {
   return (
-    <>
+    <Box
+      sx={{
+        padding: 0,
+      }}
+    >
       <Grid
         container
         component="form"
-        rowSpacing={{ xs: 2, sm: 2, md: 2 }}
-        columnSpacing={{ xs: 0, sm: 1, md: 1 }}
+        rowSpacing={{ xs: 2, sm: 4, md: 4 }}
+        columnSpacing={{ xs: 1, sm: 2, md: 2 }}
         columns={{ xs: 12, sm: 6, md: 8, lg: 12 }}
-        mx="auto"
-        // mt={6}
+        padding={0}
+        // mx="auto"
       >
-        <Grid item xs={12} sm={4} md={4} lg={4}>
+        <Grid item xs={6} sm={6} md={6} lg={6}>
           <TextField placeholder="First Name" fullWidth size="small" />
         </Grid>
-        <Grid item xs={12} sm={4} md={4} lg={4}>
+        <Grid item xs={6} sm={6} md={6} lg={6}>
           <TextField placeholder="Last Name" fullWidth size="small" />
-        </Grid>
-        <Grid item xs={12} sm={4} md={4} lg={4}>
-          <TextField placeholder="Address" fullWidth size="small" />
-        </Grid>
-        <Grid item xs={12} sm={4} md={4} lg={4}>
-          <TextField placeholder="Address" fullWidth size="small" />
-        </Grid>
-        <Grid item xs={12} sm={4} md={4} lg={4}>
-          <TextField
-            placeholder="Additional Information"
-            fullWidth
-            size="small"
-          />
-        </Grid>
-        {/* <ShopagoSelect>
-          <StyledOption value={10}>Documentation</StyledOption>
-        </ShopagoSelect> */}
-        <Grid item xs={12} sm={4} md={4} lg={4}>
-          <TextField placeholder="State" fullWidth size="small" />
-        </Grid>
-        <Grid item xs={12} sm={4} md={4} lg={4}>
-          <TextField placeholder="City" fullWidth size="small" />
         </Grid>
         <Grid item xs={12} sm={4} md={4} lg={4}>
           <TextField placeholder="Phone Number" fullWidth size="small" />
         </Grid>
+        <Grid item xs={6} sm={4} md={4} lg={4}>
+          <TextField placeholder="State" fullWidth size="small" />
+        </Grid>
+        <Grid item xs={6} sm={4} md={4} lg={4}>
+          <TextField placeholder="City" fullWidth size="small" />
+        </Grid>
+        <Grid item xs={12} sm={6} md={6} lg={6}>
+          <TextField
+            placeholder="Address"
+            multiline
+            rows={6}
+            fullWidth
+            size="small"
+          />
+        </Grid>
+        <Grid item xs={12} sm={6} md={6} lg={6}>
+          <TextField
+            placeholder="Additional Information"
+            fullWidth
+            multiline
+            rows={6}
+            size="small"
+          />
+        </Grid>
       </Grid>
-    </>
+      {/* <Box display="flex" justifyContent="center" mt={4} mb={5}>
+        <Button fullWidth variant="contained" disableElevation>
+          Add Address
+        </Button>
+      </Box> */}
+    </Box>
   );
 };
 

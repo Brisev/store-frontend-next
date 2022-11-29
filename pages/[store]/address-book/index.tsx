@@ -7,20 +7,34 @@ import Modal from "../../../components/Misc/Modal";
 import HorizontalQuickProductList from "../../../components/Product/HorizontalQuickProductList";
 import StoreLayout from "../../../layouts/store";
 import DUMMY_JSON from "../../../dummy/products.json";
+import AddressBookCreateAndUpdate from "../../../components/AddressBook/AddressBookCreateAndUpdate";
 
 const AddressBook = () => {
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
+  const [openAddAddressModal, setAddAddressModal] = useState(false);
   const handleCloseDeleteModal = () => {
     setOpenDeleteModal(false);
   };
+  const handleAddAddressModal = () => {
+    setAddAddressModal((prev) => !prev);
+  };
   const onDeleteAddress = () => {
-    setOpenDeleteModal(true);
+    setOpenDeleteModal((prev) => !prev);
   };
   return (
     <Fragment>
       <Modal
+        open={openAddAddressModal}
+        onHandleCloseModal={handleAddAddressModal}
+        cancelText="Cancel"
+        okText="Add"
+        header="Add Address"
+      >
+        <AddressBookCreateAndUpdate />
+      </Modal>
+      <Modal
         open={openDeleteModal}
-        onClose={handleCloseDeleteModal}
+        onHandleCloseModal={onDeleteAddress}
         cancelText="Don't Delete"
         okText="Yes, Delete"
         header="Delete Address"
@@ -46,7 +60,7 @@ const AddressBook = () => {
         mb={1}
         // mt={1}
       >
-        <Button href="/store/address-book/create">Add Address</Button>
+        <Button onClick={handleAddAddressModal}>Add Address</Button>
       </Stack>
 
       <Grid
