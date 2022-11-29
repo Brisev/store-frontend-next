@@ -84,30 +84,38 @@ const ProductDetails = () => {
                     )}
                   </div>
 
-                  <div>
-                    <IconButton
-                      onClick={triggerShare}
-                      aria-label="share"
+                  <Box
+                    sx={{
+                      mt: -0.5,
+                      mr: -1.5,
+                    }}
+                  >
+                    <Box
                       sx={{
-                        mt: -0.5,
+                        // mt: -0.5,
                         display: {
                           xs: "inline-block",
                           sm: "none",
                         },
                       }}
-                      size="small"
                     >
-                      <Share fontSize="small" />
-                    </IconButton>
+                      <IconButton
+                        onClick={triggerShare}
+                        aria-label="share"
+                        size="small"
+                      >
+                        <Share fontSize="small" />
+                      </IconButton>
+                    </Box>
 
                     <IconButton
                       aria-label="favourite"
-                      sx={{ mt: -1.1, mr: -1 }}
+                      // sx={{ mt: -1.1, mr: -1 }}
                       size="small"
                     >
                       <FavoriteSharp fontSize="small" />
                     </IconButton>
-                  </div>
+                  </Box>
                 </Stack>
                 <Typography mt={1} variant="h6" sx={{ fontWeight: 500 }}>
                   <span className="sansation">{DUMMY_JSON[0].name}</span>

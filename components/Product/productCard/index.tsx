@@ -10,6 +10,8 @@ import { FavoriteSharp } from "@mui/icons-material";
 import { calculateProductDiscount } from "../../../utils/products";
 import ShopagoButton from "../../Inputs/Button/Button";
 import ProductCardMedia from "./media";
+import ProductContent from "./content";
+import Link from "@mui/material/Link";
 
 export interface OFFER {
   name: string;
@@ -44,71 +46,38 @@ export const ProductCard = (props: PRODUCT_CARD) => {
     productDiscount,
   } = props;
   return (
-    <Card sx={{ maxWidth: 180, maxHeight: 350, boxShadow: "none" }}>
+    <Card
+      sx={{
+        maxWidth: 180,
+        maxHeight: 350,
+        boxShadow: "none",
+        cursor: "pointer",
+        ":hover": {
+          boxShadow: 2,
+        },
+      }}
+    >
       <ProductCardMedia id={id} media={media} name={name} />
-      <CardContent>
-        <Typography
-          mb={1}
-          sx={{
-            fontSize: "14px",
-            fontWeight: 500,
-            mt: -1,
-            // color: "var(--text-1)",
-          }}
-          noWrap
-        >
-          {name}
-        </Typography>
-        <Stack
-          sx={{
-            gap: ".5rem",
-            flexDirection: { xs: "column", sm: "column", md: "row" },
-            alignItems: { xs: "flex-start", sm: "flex-start", md: "center" },
-            justifyContent: {
-              xs: "center",
-              sm: "space-between",
-              md: "space-between",
-            },
-          }}
-        >
-          <Typography
-            sx={{
-              fontSize: "13px",
-              fontWeight: 400,
-              mt: -1,
-              color: "var(--text-1)",
-            }}
-          >
-            ₦
-            {
-              calculateProductDiscount(
-                price,
-                productDiscountType,
-                productDiscount
-              ).productAmount
-            }
-          </Typography>
-          <Typography
-            sx={{
-              textDecoration: "line-through",
-              fontSize: "12px",
-              fontWeight: 400,
-              mt: -1,
-              color: "grey",
-              // fontSize: { xs: "12px", sm: "12px", md: "11px" },
-            }}
-          >
-            ₦
-            {
-              calculateProductDiscount(
-                price,
-                productDiscountType,
-                productDiscount
-              ).discountAmount
-            }
-          </Typography>
-        </Stack>
-      </CardContent>
+      <Link
+        href={`/store/${id}`}
+        underline="hover"
+        sx={{
+          textDecoration: "none",
+          color: "inherit",
+          ":hover": {
+            textDecoration: "none",
+          },
+        }}
+      >
+        <CardContent>
+          <ProductContent
+            name={name}
+            price={price}
+            productDiscountType={productDiscountType}
+            productDiscount={productDiscount}
+          />
+        </CardContent>
+      </Link>
 
       {showActionButtons && (
         <CardActions sx={{ justifyContent: "space-between" }}>

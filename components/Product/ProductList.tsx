@@ -6,6 +6,7 @@ import { ProductCard } from "./productCard";
 const StyledProducts = styled("section")(({ theme }) => ({
   background: "#fff",
   margin: "auto",
+  height: "auto",
 }));
 
 interface IPRODUCT_LIST {
@@ -17,7 +18,9 @@ const Products = ({ title, sx }: IPRODUCT_LIST) => {
   return (
     <StyledProducts
       sx={{
-        paddingTop: { xs: "1rem", md: "1rem" },
+        // paddingTop: { xs: "1rem", md: -900 },
+        // marginTop: 10,
+        paddingLeft: { xs: 0, md: "2rem" },
         paddingBottom: "1rem",
         backgroundColor: {
           xs: "inherit",
@@ -40,7 +43,7 @@ const Products = ({ title, sx }: IPRODUCT_LIST) => {
       </Typography>
       <Grid
         container
-        rowSpacing={{ xs: 4, sm: 6, md: 8 }}
+        rowSpacing={{ xs: 4, sm: 2, md: 2 }}
         columnSpacing={{ xs: 0, sm: 2, md: 1 }}
         columns={{ xs: 4, sm: 6, md: 8, lg: 12 }}
         mx="auto"
