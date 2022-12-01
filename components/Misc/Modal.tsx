@@ -14,7 +14,7 @@ import styled from "@emotion/styled";
 
 interface IModal extends DialogProps {
   open: boolean;
-  showModalActions: boolean;
+  showModalActions?: boolean;
   okText?: string;
   cancelText?: string;
   header?: string;
