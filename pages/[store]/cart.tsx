@@ -107,6 +107,7 @@ const Cart = () => {
               variant="contained"
               disableElevation
               fullWidth
+              href="/store/checkout"
               sx={{
                 padding: ".75rem 3rem",
                 borderRadius: "",

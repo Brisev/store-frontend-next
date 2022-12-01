@@ -3,13 +3,17 @@ import { Card, CardContent, IconButton, Typography } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import { memo } from "react";
 
-const AddressBookItem = ({ onDeleteAddress }) => {
+const AddressBookItem = ({
+  onDeleteAddress,
+  elevation = 0,
+  showActionButtons = true,
+}) => {
   return (
     <Card
       sx={{
         my: 1,
       }}
-      elevation={0}
+      elevation={elevation}
     >
       <CardContent>
         <Stack
@@ -27,12 +31,20 @@ const AddressBookItem = ({ onDeleteAddress }) => {
             </Typography>
           </Box>
           <Box>
-            <IconButton size="small" color="warning">
-              <EditLocationAlt fontSize="small" />
-            </IconButton>
-            <IconButton size="small" color="error" onClick={onDeleteAddress}>
-              <Delete fontSize="small" />
-            </IconButton>
+            {showActionButtons && (
+              <>
+                <IconButton size="small" color="warning">
+                  <EditLocationAlt fontSize="small" />
+                </IconButton>
+                <IconButton
+                  size="small"
+                  color="error"
+                  onClick={onDeleteAddress}
+                >
+                  <Delete fontSize="small" />
+                </IconButton>
+              </>
+            )}
           </Box>
         </Stack>
         <Box mt={3} display="flex" flexDirection="row">
