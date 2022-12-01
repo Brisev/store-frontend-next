@@ -41,8 +41,8 @@ export default function Modal({
   cancelText,
   header,
   children,
-  onHandleCloseModal = true,
-  showModalActions,
+  onHandleCloseModal,
+  showModalActions = true,
   ...rest
 }: IModal) {
   const handleClose = (event, reason) => {
@@ -83,8 +83,7 @@ export default function Modal({
             >
               {children}
             </DialogContent>
-            {/* {cancelText ||
-              (okText && ( */}
+
             {showModalActions && (
               <DialogActions
                 sx={{
@@ -104,7 +103,6 @@ export default function Modal({
                 </Button>
               </DialogActions>
             )}
-            {/* ))} */}
           </BlurryDialog>
         </ClientOnlyPortal>
       )}
