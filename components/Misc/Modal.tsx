@@ -9,8 +9,10 @@ import DialogTitle from "@mui/material/DialogTitle";
 import ClientOnlyPortal from "../clientOnlyPortal";
 import ShopagoButton from "../Inputs/Button/Button";
 import { TransitionProps } from "@mui/material/transitions";
-import { Slide } from "@mui/material";
+import { Icon, IconButton, Slide } from "@mui/material";
 import styled from "@emotion/styled";
+import { CancelRounded } from "@mui/icons-material";
+import { Box } from "@mui/system";
 
 interface IModal extends DialogProps {
   open: boolean;
@@ -49,6 +51,10 @@ export default function Modal({
     if (reason && reason == "backdropClick") return;
     onHandleCloseModal();
   };
+  const handleCloseF = (event: React.MouseEvent<HTMLButtonElement>) => {
+    // if (reason && reason == "backdropClick") return;
+    onHandleCloseModal();
+  };
 
   return (
     <>
@@ -61,18 +67,36 @@ export default function Modal({
             maxWidth="sm"
             TransitionComponent={Transition}
           >
-            <DialogTitle
-              sx={{
-                fontWeight: 600,
-                padding: {
-                  xs: 2,
-                  md: 3,
-                },
-                fontSize: 17,
-              }}
+            <Box
+              display="flex"
+              flexDirection="row"
+              justifyContent="space-between"
             >
-              {header}
-            </DialogTitle>
+              <DialogTitle
+                sx={{
+                  fontWeight: 600,
+                  padding: {
+                    xs: 2,
+                    md: 3,
+                  },
+                  fontSize: 17,
+                }}
+              >
+                {header}
+              </DialogTitle>
+              <div>
+                <IconButton
+                  // onClick={handleCloseF}
+                  sx={{
+                    float: "right",
+                    mt: 1.6,
+                    mr: 2,
+                  }}
+                >
+                  <CancelRounded />
+                </IconButton>
+              </div>
+            </Box>
             <DialogContent
               sx={{
                 padding: {

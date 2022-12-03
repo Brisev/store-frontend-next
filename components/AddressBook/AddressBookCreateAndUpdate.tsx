@@ -10,7 +10,7 @@ const AddressBookCreateAndUpdate = () => {
       <Grid
         container
         component="form"
-        rowSpacing={{ xs: 2, sm: 4, md: 4 }}
+        rowSpacing={{ xs: 2, sm: 2, md: 2 }}
         columnSpacing={{ xs: 1, sm: 2, md: 2 }}
         columns={{ xs: 12, sm: 6, md: 8, lg: 12 }}
         padding={0}

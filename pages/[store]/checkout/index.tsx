@@ -18,50 +18,27 @@ import {
   Typography,
 } from "@mui/material";
 import { Stack } from "@mui/system";
-import React, { ReactElement } from "react";
-import AddressBookCreateAndUpdate from "../../../components/AddressBook/AddressBookCreateAndUpdate";
-import AddressBookItem from "../../../components/AddressBook/AddressBookItem";
+import React, { ReactElement, Suspense } from "react";
+
 import CheckoutItem from "../../../components/Checkout/CheckoutItem";
-import Modal from "../../../components/Misc/Modal";
-// import StoreLayout from "../../../layouts/store";
+
+import ShippingOptionsAndDetails from "../../../components/Checkout/ShippingItem";
 import DUMMY_JSON from "../../../dummy/products.json";
+
+const Modal = React.lazy(() => import("../../../components/Misc/Modal"));
+const AddressBookCreateAndUpdate = React.lazy(
+  () => import("../../../components/AddressBook/AddressBookCreateAndUpdate")
+);
+const AddressBookItem = React.lazy(
+  () => import("../../../components/AddressBook/AddressBookItem")
+);
+
 const steps = ["Shipping", "Payment", "Summary"];
 
 const StoreLayoutDiv = styled("div")(({ theme }) => ({
   background: "#f5f5f5",
   maxHeight: "auto",
-  // height: "100vh",
 }));
-
-const ShippingItem = () => {
-  return (
-    <Box
-      sx={{
-        width: "100%",
-        height: 85,
-        backgroundColor: "#c2c2c2",
-        borderRadius: 1,
-        marginTop: 2,
-        padding: 1,
-        cursor: "pointer",
-        // "&:hover": {
-        //   backgroundColor: "#c3c3c3",
-        //   opacity: [0, 0, 0.9],
-        // },
-      }}
-    >
-      <Typography variant="h6" fontSize={13}>
-        In-store Pickup
-      </Typography>
-      <Typography variant="h6" mt={0} fontSize={12}>
-        ₦3,400
-      </Typography>
-      <Typography variant="caption" mt={1}>
-        Delivered between Wednesday 14 Dec and Friday 16 Dec
-      </Typography>
-    </Box>
-  );
-};
 
 const Checkout = () => {
   const [activeStep, setActiveStep] = React.useState(0);
@@ -147,7 +124,9 @@ const Checkout = () => {
         okText="Add"
         header="Add Address"
       >
-        <AddressBookCreateAndUpdate />
+        <Suspense fallback={<div>Loading...</div>}>
+          <AddressBookCreateAndUpdate />
+        </Suspense>
       </Modal>
       <Modal
         open={openAddAddressModal}
@@ -163,16 +142,17 @@ const Checkout = () => {
           columnSpacing={{ xs: 0, sm: 2, md: 1 }}
           columns={{ xs: 4, sm: 6, md: 8, lg: 12 }}
           mx="auto"
-          // mb={8}
         >
           {[1, 2, 3].map((address, index) => {
             return (
               <Grid item xs={12} sm={12} md={12} lg={12} key={index}>
-                <AddressBookItem
-                  elevation={1}
-                  showActionButtons={false}
-                  onDeleteAddress={() => console.log()}
-                />
+                <Suspense fallback={<div>Loading...</div>}>
+                  <AddressBookItem
+                    elevation={1}
+                    showActionButtons={false}
+                    onDeleteAddress={() => console.log()}
+                  />
+                </Suspense>
               </Grid>
             );
           })}
@@ -235,6 +215,7 @@ const Checkout = () => {
             {DUMMY_JSON.map((item, index) => {
               return (
                 <CheckoutItem
+                  key={index}
                   itemsCount={DUMMY_JSON.length}
                   count={index}
                   name={item.name}
@@ -243,7 +224,7 @@ const Checkout = () => {
             })}
           </Box>
           <Box mt={3}>
-            <Stack
+            <Box
               display="flex"
               flexDirection="row"
               justifyContent="space-between"
@@ -252,20 +233,20 @@ const Checkout = () => {
                 variant="h6"
                 fontSize={15}
                 fontWeight={600}
-                marginBottom={0.5}
+                // marginBottom={0.5}
               >
                 Address Details
               </Typography>
-              <div>
+              <Box>
                 <Button
                   size="small"
-                  sx={{ mt: -2.5, textTransform: "capitalize" }}
+                  sx={{ textTransform: "capitalize" }}
                   onClick={handleAddAddressModal}
                 >
-                  Change Delivery Address
+                  Change Address
                 </Button>
-              </div>
-            </Stack>
+              </Box>
+            </Box>
 
             <Typography fontSize={14} fontWeight={400}>
               Ikhide Bright
@@ -289,145 +270,7 @@ const Checkout = () => {
             >
               Delivery Method
             </Typography>
-
-            <RadioGroup
-              aria-labelledby="demo-radio-buttons-group-label"
-              defaultValue="male"
-              name="radio-buttons-group"
-            >
-              <FormControlLabel
-                value="male"
-                control={<Radio />}
-                sx={{
-                  fontSize: "10px",
-                  marginBottom: 2,
-                }}
-                label={
-                  <Box>
-                    <Typography fontSize={14}>
-                      Door Delivery (₦1,400)
-                    </Typography>
-                    <Typography variant="caption">
-                      Delivered between 14th Dec and 20th Dec
-                    </Typography>
-                  </Box>
-                }
-              />
-              <FormControlLabel
-                value="female"
-                control={<Radio />}
-                label={
-                  <Box>
-                    <Typography fontSize={14}>
-                      In-Store Pickup (₦2,920)
-                    </Typography>
-                  </Box>
-                }
-              />
-            </RadioGroup>
-
-            <Card
-              sx={{
-                my: 1,
-                // cursor: "pointer",
-              }}
-              elevation={0}
-            >
-              <CardContent>
-                <Box display="flex" justifyContent="space-between">
-                  <Box>
-                    <Typography variant="caption" fontWeight={500}>
-                      NO 2, Ademola Adetokunbo crescent, Wuse 11
-                    </Typography>
-                    <Typography
-                      variant="caption"
-                      display="block"
-                      fontWeight={500}
-                    >
-                      FCT Abuja
-                    </Typography>
-                  </Box>
-                  <div>
-                    <Button
-                      sx={{
-                        // padding: 0,
-                        // py: 0,
-                        mt: -0.5,
-                        textTransform: "capitalize",
-                      }}
-                      size="small"
-                    >
-                      Change Pickup Location
-                    </Button>
-                  </div>
-                </Box>
-                <Typography
-                  variant="caption"
-                  display="block"
-                  sx={{
-                    mt: 2,
-                  }}
-                >
-                  Availability:
-                </Typography>
-                <Box display="flex" justifyContent="space-between" width={115}>
-                  <Typography variant="caption" display="block">
-                    Sun
-                  </Typography>
-                  <Typography variant="caption" display="block">
-                    9am - 5pm
-                  </Typography>
-                </Box>
-                <Box display="flex" justifyContent="space-between" width={115}>
-                  <Typography variant="caption" display="block">
-                    Mon
-                  </Typography>
-                  <Typography variant="caption" display="block">
-                    9am - 5pm
-                  </Typography>
-                </Box>
-                <Box display="flex" justifyContent="space-between" width={115}>
-                  <Typography variant="caption" display="block">
-                    Tue
-                  </Typography>
-                  <Typography variant="caption" display="block">
-                    9am - 5pm
-                  </Typography>
-                </Box>
-                <Box display="flex" justifyContent="space-between" width={115}>
-                  <Typography variant="caption" display="block">
-                    Wed
-                  </Typography>
-                  <Typography variant="caption" display="block">
-                    9am - 5pm
-                  </Typography>
-                </Box>
-                <Box display="flex" justifyContent="space-between" width={115}>
-                  <Typography variant="caption" display="block">
-                    Thur
-                  </Typography>
-                  <Typography variant="caption" display="block">
-                    8am - 3pm
-                  </Typography>
-                </Box>
-                <Box display="flex" justifyContent="space-between" width={115}>
-                  <Typography variant="caption" display="block">
-                    Fri
-                  </Typography>
-                  <Typography variant="caption" display="block">
-                    9am - 5pm
-                  </Typography>
-                </Box>
-                <Box display="flex" justifyContent="space-between" width={115}>
-                  <Typography variant="caption" display="block">
-                    Sat
-                  </Typography>
-                  <Typography variant="caption" display="block">
-                    9am - 5pm
-                  </Typography>
-                </Box>
-              </CardContent>
-            </Card>
+            <ShippingOptionsAndDetails />
           </Box>
 
           <Box mt={3}>
