@@ -17,14 +17,14 @@ function CheckoutItem({ itemsCount, count, name }) {
         marginBottom={1}
       >
         <Box>
-          <Typography fontSize={12.5} fontWeight={400}>
+          <Typography fontSize={14} fontWeight={400}>
             Ram: 32GB
           </Typography>
-          <Typography fontSize={12.5} fontWeight={400}>
+          <Typography fontSize={14} fontWeight={400}>
             Color: Green
           </Typography>
         </Box>
-        <Typography fontSize={12.5} fontWeight={400} color="grey">
+        <Typography fontSize={14} fontWeight={400} color="grey">
           2x
         </Typography>
       </Box>

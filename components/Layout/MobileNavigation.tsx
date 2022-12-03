@@ -181,6 +181,9 @@ function MobileNavigation() {
           {menus.map((menu: IMobileMenu, index: number) => {
             return (
               <BottomNavigationAction
+                sx={{
+                  color: "primary",
+                }}
                 onClick={(e) => handleMenuItemClicked(e, menu)}
                 aria-controls={open ? "account-menu" : undefined}
                 aria-haspopup="true"

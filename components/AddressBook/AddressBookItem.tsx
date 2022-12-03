@@ -12,6 +12,7 @@ const AddressBookItem = ({
     <Card
       sx={{
         my: 1,
+        cursor: "pointer",
       }}
       elevation={elevation}
     >
