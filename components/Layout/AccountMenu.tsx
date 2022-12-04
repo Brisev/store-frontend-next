@@ -1,4 +1,10 @@
-import { Divider, ListItemIcon, Menu, MenuItem } from "@mui/material";
+import {
+  Divider,
+  ListItemIcon,
+  Menu,
+  MenuItem,
+  Typography,
+} from "@mui/material";
 import {
   AccountCircleOutlined,
   ChromeReaderModeOutlined,
@@ -26,6 +32,7 @@ interface IAccountMenu {
   link?: string;
   isLink?: boolean;
   component?: React.ReactElement;
+  color?: string;
 }
 
 const accountMenu: IAccountMenu[] = [
@@ -56,16 +63,11 @@ const accountMenu: IAccountMenu[] = [
     link: "/store/account-update",
     isLink: true,
   },
-  // {
-  //   title: "Report a bug",
-  //   icon: <ErrorOutlined fontSize="small" />,
-  //   link: "/store/feedback",
-  //   isLink: true,
-  // },
   {
     title: "Logout",
-    icon: <Logout fontSize="small" />,
+    icon: <Logout fontSize="small" color="error" />,
     isLink: false,
+    color: "error",
   },
 ];
 
@@ -123,7 +125,7 @@ function AccountMenu({ sk, handleClick, anchorEl, open, handleClose }: any) {
               key={`mobile_menu_${index}`}
             >
               <ListItemIcon>{menu.icon}</ListItemIcon>
-              {menu.title}
+              <Typography color={menu.color}>{menu.title}</Typography>
             </MenuItem>
           );
         })}

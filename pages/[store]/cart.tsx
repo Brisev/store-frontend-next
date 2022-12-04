@@ -14,6 +14,7 @@ import CartItem from "../../components/Cart/CartItem";
 import DUMMY_JSON from "../../dummy/products.json";
 import StoreLayout from "../../layouts/store";
 import CartSumarrySideBar from "../../components/Cart/CartSummarySideBar";
+import HorizontalQuickProductList from "../../components/Product/HorizontalQuickProductList";
 
 const Cart = () => {
   const cart = { items: DUMMY_JSON };
@@ -126,6 +127,17 @@ const Cart = () => {
           No items in cart
         </Typography>
       )}
+      <Box mt={10}></Box>
+      <HorizontalQuickProductList
+        title="Saved"
+        related={DUMMY_JSON}
+        seeMoreLink="/store/saved"
+      />
+      <HorizontalQuickProductList
+        title="Recently seen"
+        related={DUMMY_JSON}
+        seeMoreLink="/store/recently-viewd"
+      />
     </>
   );
 };
