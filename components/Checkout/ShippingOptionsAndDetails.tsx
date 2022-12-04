@@ -9,7 +9,7 @@ import {
 import { Box } from "@mui/system";
 import React, { Suspense } from "react";
 const Modal = React.lazy(() => import("../Misc/Modal"));
-import PickupLocationItem from "./PickupLocationItem";
+const PickupLocationItem = React.lazy(() => import("./PickupLocationItem"));
 
 const ShippingOptionsAndDetails = () => {
   const [openAddAddressModal, setOpenAddAddressModal] = React.useState(false);
@@ -39,11 +39,7 @@ const ShippingOptionsAndDetails = () => {
             return (
               <Grid item xs={12} sm={12} md={12} lg={12} key={index}>
                 <Suspense fallback={<div>Loading...</div>}>
-                  <PickupLocationItem
-                    elevation={1}
-                    // showActionButtons={false}
-                    // onDeleteAddress={() => console.log()}
-                  />
+                  <PickupLocationItem elevation={1} />
                 </Suspense>
               </Grid>
             );
@@ -83,7 +79,7 @@ const ShippingOptionsAndDetails = () => {
                 mb: -0.9,
               }}
             >
-              <Typography fontSize={14}>In-Store Pickup (₦2,920)</Typography>
+              <Typography fontSize={14}>Pickup Location (₦2,920)</Typography>
               <Button
                 sx={{
                   // padding: 0,
@@ -95,14 +91,15 @@ const ShippingOptionsAndDetails = () => {
                 onClick={handleAddAddressModal}
                 size="small"
               >
-                Change Location
+                Select Location
               </Button>
             </Box>
           }
         />
       </RadioGroup>
-
-      <PickupLocationItem />
+      <Suspense fallback={<div>Loading...</div>}>
+        <PickupLocationItem />
+      </Suspense>
     </Box>
   );
 };

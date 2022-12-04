@@ -1,17 +1,17 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
+// import TextField from "@mui/material/TextField";
 import Dialog, { DialogProps } from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
+// import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import ClientOnlyPortal from "../clientOnlyPortal";
-import ShopagoButton from "../Inputs/Button/Button";
+// import ShopagoButton from "../Inputs/Button/Button";
 import { TransitionProps } from "@mui/material/transitions";
-import { Icon, IconButton, Slide } from "@mui/material";
+import { IconButton, Slide } from "@mui/material";
 import styled from "@emotion/styled";
-import { CancelRounded } from "@mui/icons-material";
+import { CancelRounded, CloseOutlined } from "@mui/icons-material";
 import { Box } from "@mui/system";
 
 interface IModal extends DialogProps {
@@ -84,18 +84,28 @@ export default function Modal({
               >
                 {header}
               </DialogTitle>
-              <div>
-                <IconButton
-                  // onClick={handleCloseF}
-                  sx={{
-                    float: "right",
-                    mt: 1.6,
-                    mr: 2,
-                  }}
-                >
-                  <CancelRounded />
-                </IconButton>
-              </div>
+
+              {!showModalActions && (
+                <div>
+                  <IconButton
+                    onClick={onHandleCloseModal}
+                    size="small"
+                    sx={{
+                      float: "right",
+                      mt: {
+                        xs: 1.42,
+                        sm: 2.2,
+                      },
+                      mr: {
+                        xs: 1,
+                        sm: 2,
+                      },
+                    }}
+                  >
+                    <CloseOutlined fontSize="small" />
+                  </IconButton>
+                </div>
+              )}
             </Box>
             <DialogContent
               sx={{

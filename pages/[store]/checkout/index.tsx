@@ -2,38 +2,20 @@ import styled from "@emotion/styled";
 import {
   Box,
   Button,
-  Card,
-  CardContent,
   Container,
   Divider,
-  FormControl,
-  FormControlLabel,
-  FormLabel,
-  Grid,
-  Radio,
-  RadioGroup,
   Step,
   StepButton,
   Stepper,
   Typography,
 } from "@mui/material";
 import { Stack } from "@mui/system";
-import React, { ReactElement, Suspense } from "react";
+import React from "react";
 
-import CheckoutItem from "../../../components/Checkout/CheckoutItem";
+import CheckoutStepOne from "../../../components/Checkout/StepOne";
+import CheckoutStepTwo from "../../../components/Checkout/StepTwo";
 
-import ShippingOptionsAndDetails from "../../../components/Checkout/ShippingItem";
-import DUMMY_JSON from "../../../dummy/products.json";
-
-const Modal = React.lazy(() => import("../../../components/Misc/Modal"));
-const AddressBookCreateAndUpdate = React.lazy(
-  () => import("../../../components/AddressBook/AddressBookCreateAndUpdate")
-);
-const AddressBookItem = React.lazy(
-  () => import("../../../components/AddressBook/AddressBookItem")
-);
-
-const steps = ["Shipping", "Payment", "Summary"];
+const steps = ["Shipping", "Payment"];
 
 const StoreLayoutDiv = styled("div")(({ theme }) => ({
   background: "#f5f5f5",
@@ -72,104 +54,28 @@ const Checkout = () => {
     setActiveStep(newActiveStep);
   };
 
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
+  // const handleBack = () => {
+  //   setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  // };
 
   const handleStep = (step: number) => () => {
     setActiveStep(step);
   };
 
-  const handleComplete = () => {
-    const newCompleted = completed;
-    newCompleted[activeStep] = true;
-    setCompleted(newCompleted);
-    handleNext();
-  };
+  // const handleComplete = () => {
+  //   const newCompleted = completed;
+  //   newCompleted[activeStep] = true;
+  //   setCompleted(newCompleted);
+  //   handleNext();
+  // };
 
-  const handleReset = () => {
-    setActiveStep(0);
-    setCompleted({});
-  };
-  const [value, setValue] = React.useState("female");
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue((event.target as HTMLInputElement).value);
-  };
-
-  const [openAddAddressModal, setOpenAddAddressModal] = React.useState(false);
-
-  const [openAddNewAddressModal, setopenAddNewAddressModal] =
-    React.useState(false);
-
-  const handleAddAddressModal = () => {
-    setOpenAddAddressModal((prev) => !prev);
-  };
-
-  const handleAddNewAddressModal = () => {
-    setopenAddNewAddressModal((prev) => !prev);
-  };
-
-  const addNewAddressModal = () => {
-    setOpenAddAddressModal(false);
-    setopenAddNewAddressModal(true);
-  };
+  // const handleReset = () => {
+  //   setActiveStep(0);
+  //   setCompleted({});
+  // };
 
   return (
     <StoreLayoutDiv>
-      <Modal
-        open={openAddNewAddressModal}
-        onHandleCloseModal={handleAddNewAddressModal}
-        cancelText="Cancel"
-        okText="Add"
-        header="Add Address"
-      >
-        <Suspense fallback={<div>Loading...</div>}>
-          <AddressBookCreateAndUpdate />
-        </Suspense>
-      </Modal>
-      <Modal
-        open={openAddAddressModal}
-        onHandleCloseModal={handleAddAddressModal}
-        showModalActions={false}
-        cancelText="Cancel"
-        okText="Add"
-        header="Select Delivery Address"
-      >
-        <Grid
-          container
-          rowSpacing={{ xs: 0, sm: 2, md: 2 }}
-          columnSpacing={{ xs: 0, sm: 2, md: 1 }}
-          columns={{ xs: 4, sm: 6, md: 8, lg: 12 }}
-          mx="auto"
-        >
-          {[1, 2, 3].map((address, index) => {
-            return (
-              <Grid item xs={12} sm={12} md={12} lg={12} key={index}>
-                <Suspense fallback={<div>Loading...</div>}>
-                  <AddressBookItem
-                    elevation={1}
-                    showActionButtons={false}
-                    onDeleteAddress={() => console.log()}
-                  />
-                </Suspense>
-              </Grid>
-            );
-          })}
-        </Grid>
-
-        <Button
-          fullWidth
-          variant="contained"
-          disableElevation
-          sx={{
-            marginTop: 3,
-          }}
-          onClick={addNewAddressModal}
-        >
-          Create New Address
-        </Button>
-      </Modal>
       <Container>
         <Box
           sx={{
@@ -202,76 +108,10 @@ const Checkout = () => {
               </Step>
             ))}
           </Stepper>
-          <Box mt={3}>
-            <Typography
-              variant="h6"
-              fontSize={15}
-              fontWeight={600}
-              marginBottom={0.5}
-            >
-              Shippment Details
-            </Typography>
 
-            {DUMMY_JSON.map((item, index) => {
-              return (
-                <CheckoutItem
-                  key={index}
-                  itemsCount={DUMMY_JSON.length}
-                  count={index}
-                  name={item.name}
-                />
-              );
-            })}
-          </Box>
-          <Box mt={3}>
-            <Box
-              display="flex"
-              flexDirection="row"
-              justifyContent="space-between"
-            >
-              <Typography
-                variant="h6"
-                fontSize={15}
-                fontWeight={600}
-                // marginBottom={0.5}
-              >
-                Address Details
-              </Typography>
-              <Box>
-                <Button
-                  size="small"
-                  sx={{ textTransform: "capitalize" }}
-                  onClick={handleAddAddressModal}
-                >
-                  Change Address
-                </Button>
-              </Box>
-            </Box>
+          {activeStep === 0 && <CheckoutStepOne />}
 
-            <Typography fontSize={14} fontWeight={400}>
-              Ikhide Bright
-            </Typography>
-            <Typography fontSize={14} fontWeight={400}>
-              No 2, behind Gishiri police station
-            </Typography>
-            <Typography fontSize={14} fontWeight={400}>
-              Ikeja, Lagos
-            </Typography>
-            <Typography fontSize={14} fontWeight={400}>
-              07064045329
-            </Typography>
-          </Box>
-          <Box mt={3}>
-            <Typography
-              variant="h6"
-              fontSize={15}
-              fontWeight={600}
-              marginBottom={2}
-            >
-              Delivery Method
-            </Typography>
-            <ShippingOptionsAndDetails />
-          </Box>
+          {activeStep === 1 && <CheckoutStepTwo />}
 
           <Box mt={3}>
             <Stack
@@ -318,6 +158,32 @@ const Checkout = () => {
                 ₦3,400
               </Typography>
             </Stack>
+            <Divider />
+            <Stack
+              display="flex"
+              flexDirection="row"
+              justifyContent="space-between"
+              mt={2}
+            >
+              <Typography
+                variant="h6"
+                fontSize={14}
+                fontWeight={600}
+                marginBottom={2}
+                color="primary"
+              >
+                Total
+              </Typography>
+              <Typography
+                variant="h6"
+                fontSize={14}
+                fontWeight={600}
+                marginBottom={2}
+                color="primary"
+              >
+                ₦93,800
+              </Typography>
+            </Stack>
           </Box>
 
           <Button
@@ -327,6 +193,7 @@ const Checkout = () => {
             sx={{
               marginTop: 3,
             }}
+            onClick={handleNext}
           >
             Proceed to Payment
           </Button>

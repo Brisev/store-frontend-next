@@ -6,7 +6,7 @@ const PickupLocationItem = ({ elevation = 0 }) => {
     <Card
       sx={{
         my: 1,
-        // cursor: "pointer",
+        cursor: "pointer",
       }}
       elevation={elevation}
     >
@@ -20,19 +20,6 @@ const PickupLocationItem = ({ elevation = 0 }) => {
               FCT Abuja
             </Typography>
           </Box>
-          {/* <div>
-            <Button
-              sx={{
-                // padding: 0,
-                // py: 0,
-                mt: -0.5,
-                textTransform: "capitalize",
-              }}
-              size="small"
-            >
-              Change Location
-            </Button>
-          </div> */}
         </Box>
         <Typography
           variant="caption"

@@ -1,35 +1,12 @@
 import * as React from "react";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import FolderIcon from "@mui/icons-material/Folder";
-import RestoreIcon from "@mui/icons-material/Restore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import {
-  Avatar,
-  Backdrop,
-  Divider,
-  ListItemIcon,
-  Menu,
-  MenuItem,
-  Paper,
-} from "@mui/material";
+import { Backdrop, Paper } from "@mui/material";
 import {
   AccountCircleOutlined,
   ChromeReaderModeOutlined,
-  ErrorOutline,
-  ErrorOutlined,
-  LocalMall,
-  Logout,
-  ManageAccountsOutlined,
-  MyLocationOutlined,
-  PersonAdd,
-  Preview,
-  Settings,
   ShoppingBagOutlined,
-  Stars,
   StorefrontOutlined,
-  //   StoreOutlined,
 } from "@mui/icons-material";
 import AuthDialog from "../AuthModal";
 import { useRouter } from "next/router";

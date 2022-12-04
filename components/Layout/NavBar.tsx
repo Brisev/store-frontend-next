@@ -6,35 +6,9 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import Switch from "@mui/material/Switch";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormGroup from "@mui/material/FormGroup";
-import MenuItem from "@mui/material/MenuItem";
-import Menu from "@mui/material/Menu";
-import { Badge, Container, Divider, ListItemIcon } from "@mui/material";
-import {
-  AccountCircleOutlined,
-  ChromeReaderModeOutlined,
-  ErrorOutline,
-  ErrorOutlined,
-  LocalMall,
-  Logout,
-  ManageAccountsOutlined,
-  // MyLocationOutlined,
-  PersonAdd,
-  Preview,
-  Settings,
-  ShoppingBagOutlined,
-  Stars,
-  StorefrontOutlined,
-  //   StoreOutlined,
-} from "@mui/icons-material";
-import {
-  MyLocationOutlined,
-  Search,
-  ShoppingBasket,
-  ShoppingCart,
-} from "@mui/icons-material";
+import { Container } from "@mui/material";
+
+import { Search, ShoppingCart } from "@mui/icons-material";
 import AccountMenu from "./AccountMenu";
 
 export default function MenuAppBar() {
@@ -108,7 +82,7 @@ export default function MenuAppBar() {
               variant="h6"
               component="div"
               sx={{ flexGrow: 1 }}
-              color="grey"
+              color="black"
               fontWeight={900}
             >
               Shopago
