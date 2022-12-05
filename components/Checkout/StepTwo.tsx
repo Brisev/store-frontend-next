@@ -23,7 +23,10 @@ const CheckoutStepTwo = ({ elevation = 0 }) => {
       <Box
         // display="flex"
         sx={{
-          width: 300,
+          width: {
+            xs: "100%",
+            sm: 300,
+          },
         }}
       >
         <TextField placeholder="Enter Voucher Code" fullWidth size="small" />

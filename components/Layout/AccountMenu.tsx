@@ -95,6 +95,13 @@ function AccountMenu({ sk, handleClick, anchorEl, open, handleClose }: any) {
     } else {
     }
   };
+
+  const isMenuSelected = (link: string) => {
+    const path = router.asPath;
+    if (path.includes(link)) return true;
+    return false;
+  };
+
   return (
     <>
       <Menu
@@ -123,6 +130,8 @@ function AccountMenu({ sk, handleClick, anchorEl, open, handleClose }: any) {
             <MenuItem
               onClick={(e) => handleMenuItemClicked(e, menu)}
               key={`mobile_menu_${index}`}
+              dense
+              selected={isMenuSelected(menu.link)}
             >
               <ListItemIcon>{menu.icon}</ListItemIcon>
               <Typography color={menu.color}>{menu.title}</Typography>

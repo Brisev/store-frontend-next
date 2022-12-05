@@ -70,7 +70,7 @@ export default function MenuAppBar() {
               }}
             >
               <IconButton
-                size="small"
+                size="medium"
                 edge="start"
                 // color="action"
                 aria-label="menu"
@@ -101,7 +101,7 @@ export default function MenuAppBar() {
                 }}
               >
                 <IconButton>
-                  <Search fontSize="small" color="action" />
+                  <Search fontSize="medium" color="action" />
                 </IconButton>
               </Box>
               <IconButton href="/store/cart" sx={{}}>
@@ -112,7 +112,7 @@ export default function MenuAppBar() {
                     fontSize: 1,
                   }}
                 > */}
-                <ShoppingCart fontSize="small" color="action" />
+                <ShoppingCart fontSize="medium" color="action" />
                 {/* </Badge> */}
               </IconButton>
               <Box
@@ -128,7 +128,7 @@ export default function MenuAppBar() {
                 }}
               >
                 <IconButton onClick={(e) => handleClick(e)}>
-                  <AccountCircle fontSize="small" />
+                  <AccountCircle fontSize="medium" />
                 </IconButton>
               </Box>
               {/* <Menu
