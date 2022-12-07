@@ -130,7 +130,7 @@ function AccountMenu({ sk, handleClick, anchorEl, open, handleClose }: any) {
             <MenuItem
               onClick={(e) => handleMenuItemClicked(e, menu)}
               key={`mobile_menu_${index}`}
-              dense
+              // dense
               selected={isMenuSelected(menu.link)}
             >
               <ListItemIcon>{menu.icon}</ListItemIcon>
