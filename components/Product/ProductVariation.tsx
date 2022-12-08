@@ -19,6 +19,7 @@ const ProductVariation = () => {
         </Typography>
         {["16GB", "32GB", "64GB", "256GB", "512GB", "1TB"].map((_, index) => (
           <Chip
+            key={index}
             label={_}
             variant="filled"
             sx={{

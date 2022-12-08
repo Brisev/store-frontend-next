@@ -43,9 +43,9 @@ const ReviewSummary = () => {
           },
         }}
       >
-        {[5, 4, 3, 2, 1].map((item) => {
+        {[5, 4, 3, 2, 1].map((item, index) => {
           return (
-            <Box display="flex" flexDirection="row">
+            <Box display="flex" flexDirection="row" key={index}>
               <Typography
                 variant="subtitle2"
                 sx={{ fontWeight: 300, marginRight: 2 }}

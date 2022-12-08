@@ -49,10 +49,13 @@ export default function MenuAppBar() {
       />
 
       <AppBar
-        position="fixed"
+        // position="sticky"
         sx={{
           background: "rgba(255,255,255, 0.98)",
           boxShadow: "rgba(0, 0, 0, 0.16) 0px -1px 5px",
+          position: "fixed",
+          // width: 400,
+          // top: 80,
         }}
       >
         <Container fixed>
@@ -131,27 +134,7 @@ export default function MenuAppBar() {
                   <AccountCircle fontSize="medium" />
                 </IconButton>
               </Box>
-              {/* <Menu
-                id="menu-appbar"
-                // anchorEl={anchorEl}
-                open={true}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                // open={Boolean(anchorEl)}
-                // onClose={handleClose}
-              >
-                <MenuItem>Profile</MenuItem>
-                <MenuItem>My account</MenuItem>
-              </Menu> */}
             </div>
-            {/* )} */}
           </Toolbar>
         </Container>
       </AppBar>

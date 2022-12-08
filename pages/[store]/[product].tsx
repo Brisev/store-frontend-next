@@ -6,6 +6,7 @@ import DUMMY_JSON from "../../dummy/products.json";
 import ProductDetailsMedia from "../../components/Product/ProductDetailsMedia";
 import { Box, Stack } from "@mui/system";
 import {
+  Button,
   Chip,
   Divider,
   Grid,
@@ -70,16 +71,19 @@ const ProductDetails = () => {
                   <div>
                     {DUMMY_JSON[0].tags && (
                       <>
-                        {DUMMY_JSON[0].tags.map((tag: string) => (
-                          <Chip
-                            label={tag}
-                            variant="outlined"
-                            size="small"
-                            sx={{
-                              mr: 1,
-                            }}
-                          />
-                        ))}
+                        {DUMMY_JSON[0].tags.map(
+                          (tag: string, index: number) => (
+                            <Chip
+                              key={index}
+                              label={tag}
+                              variant="outlined"
+                              size="small"
+                              sx={{
+                                mr: 1,
+                              }}
+                            />
+                          )
+                        )}
                       </>
                     )}
                   </div>
@@ -225,6 +229,40 @@ const ProductDetails = () => {
         related={DUMMY_JSON}
         seeMoreLink="/store/recently-viewd"
       />
+
+      <Stack
+        direction="row"
+        width="100%"
+        bgcolor="#fff"
+        alignItems="center"
+        justifyContent="space-between"
+        py={1}
+        px={3}
+        sx={{
+          zIndex: 5,
+          display: { xs: "flex", sm: "flex", md: "none" },
+          position: "fixed",
+          bottom: 57,
+          left: 0,
+          // borderTopColor: "#DBE1FC",
+          // borderTopStyle: "solid",
+          // borderTopWidth: "1px",
+        }}
+      >
+        <Button
+          variant="contained"
+          disableElevation
+          fullWidth
+          // size="small"
+          // href="/store/checkout"
+          sx={{
+            // padding: ".75rem 3rem",
+            borderRadius: "",
+          }}
+        >
+          Add to cart
+        </Button>
+      </Stack>
     </Fragment>
   );
 };

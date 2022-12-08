@@ -12,11 +12,11 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Link from "next/link";
+// import Link from "next/link";
 
 // import "swiper/css";
 
-import { FreeMode, Pagination } from "swiper";
+// import { FreeMode, Pagination } from "swiper";
 import ShopagoBox from "../Layout/ShopagoBox";
 // import { useTheme } from "@emotion/react";
 
@@ -48,37 +48,37 @@ const HorizontalQuickProductList = ({
     }
   }
 
-  function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{
-          ...style,
-          display: "block",
-          background: "#000",
-          borderRadius: "100%",
-        }}
-        onClick={onClick}
-      />
-    );
-  }
+  // function SampleNextArrow(props) {
+  //   const { className, style, onClick } = props;
+  //   return (
+  //     <div
+  //       className={className}
+  //       style={{
+  //         ...style,
+  //         display: "block",
+  //         background: "#000",
+  //         borderRadius: "100%",
+  //       }}
+  //       onClick={onClick}
+  //     />
+  //   );
+  // }
 
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{
-          ...style,
-          display: "block",
-          background: "#000",
-          borderRadius: "100%",
-        }}
-        onClick={onClick}
-      />
-    );
-  }
+  // function SamplePrevArrow(props) {
+  //   const { className, style, onClick } = props;
+  //   return (
+  //     <div
+  //       className={className}
+  //       style={{
+  //         ...style,
+  //         display: "block",
+  //         background: "#000",
+  //         borderRadius: "100%",
+  //       }}
+  //       onClick={onClick}
+  //     />
+  //   );
+  // }
 
   const settings = {
     slidesToShow: itemsToShow,

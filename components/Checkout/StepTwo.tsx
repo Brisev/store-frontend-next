@@ -97,7 +97,7 @@ const CheckoutStepTwo = ({ elevation = 0 }) => {
               display="block"
               mb={3}
             >
-              Pay the exact sum of N93,800 to the account details below
+              Pay the exact sum of <b> N93,800</b> to the account details below
             </Typography>
             <Typography variant="body2" fontWeight={500}>
               Ikhide Bright

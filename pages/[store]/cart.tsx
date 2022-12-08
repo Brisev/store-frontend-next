@@ -97,11 +97,11 @@ const Cart = () => {
               zIndex: 5,
               display: { xs: "flex", sm: "flex", md: "none" },
               position: "fixed",
-              bottom: 0,
+              bottom: 57,
               left: 0,
-              borderTopColor: "#DBE1FC",
-              borderTopStyle: "solid",
-              borderTopWidth: "1px",
+              // borderTopColor: "#DBE1FC",
+              // borderTopStyle: "solid",
+              // borderTopWidth: "1px",
             }}
           >
             <MuiButton
@@ -110,7 +110,7 @@ const Cart = () => {
               fullWidth
               href="/store/checkout"
               sx={{
-                padding: ".75rem 3rem",
+                // padding: ".75rem 3rem",
                 borderRadius: "",
               }}
             >
