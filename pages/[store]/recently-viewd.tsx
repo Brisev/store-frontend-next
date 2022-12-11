@@ -1,6 +1,5 @@
-import { Button, Grid, Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { Fragment, ReactElement } from "react";
-import { ProductCard } from "../../components/Product/productCard";
 import StoreLayout from "../../layouts/store";
 import DUMMY_JSON from "../../dummy/products.json";
 import Products from "../../components/Product/ProductList";

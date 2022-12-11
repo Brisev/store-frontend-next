@@ -2,59 +2,23 @@ import * as React from "react";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import { Backdrop, Paper } from "@mui/material";
-import {
-  AccountCircleOutlined,
-  ChromeReaderModeOutlined,
-  ShoppingBagOutlined,
-  StorefrontOutlined,
-} from "@mui/icons-material";
 import AuthDialog from "../AuthModal";
 import { useRouter } from "next/router";
-import AccountMenu from "./AccountMenu";
-
-interface IMobileMenu {
-  title?: string;
-  icon?: React.ReactElement;
-  isLink?: boolean;
-  link?: string;
-  action?: string;
-}
-
-const menus: IMobileMenu[] = [
-  {
-    title: "Home",
-    icon: <StorefrontOutlined />,
-    isLink: true,
-    link: "/store",
-  },
-  {
-    title: "Categories",
-    icon: <ChromeReaderModeOutlined />,
-    isLink: false,
-    action: "OPEN_CATEGORY_MODAL",
-  },
-  {
-    title: "Orders",
-    icon: <ShoppingBagOutlined />,
-    isLink: true,
-    link: "/store/orders",
-  },
-  {
-    title: "Account",
-    icon: <AccountCircleOutlined />,
-    isLink: false,
-    action: "OPEN_ACCOUNT_MODAL",
-  },
-];
+import QuickMenu from "./QuickMenuPop";
+import { MenuContext } from "../../store/menuContext";
 
 function MobileNavigation() {
   const router = useRouter();
-  const [value, setValue] = React.useState("Home");
-  const [showModal, setshowModal] = React.useState(false);
+
+  const [mobileMenuValue, setMobileMenuValue] = React.useState("Home");
+
+  const [showAuthDialogModal, setshowAuthDialogModal] = React.useState(false);
+
+  const [quickMenuSX, setquickMenuSX] = React.useState({});
 
   const handleMenuClick = (event: React.SyntheticEvent, newValue: string) => {
-    setValue(newValue);
-    setshowModal((oldState) => !oldState);
+    setMobileMenuValue(newValue);
+    setshowAuthDialogModal((oldState) => !oldState);
   };
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -68,25 +32,25 @@ function MobileNavigation() {
     setAnchorEl(null);
   };
 
-  const handleMenuAction = (
-    e: React.MouseEvent<HTMLElement>,
-    action: string
-  ) => {
-    if (action === "OPEN_ACCOUNT_MODAL") {
+  const { menu, setSubMenuHandler, subMenu } = React.useContext(MenuContext);
+
+  const handleMenuAction = (e: React.MouseEvent<HTMLElement>, menu) => {
+    if (
+      ["OPEN_ACCOUNT_MODAL", "OPEN_CATEGORIES_MENU_MODAL"].includes(menu.action)
+    ) {
+      setSubMenuHandler(menu.subMenu);
+      setquickMenuSX(menu.sx);
       handleClick(e);
     }
   };
 
-  const handleMenuItemClicked = (
-    e: React.MouseEvent<HTMLElement>,
-    menu: IMobileMenu
-  ) => {
+  const handleMenuItemClicked = (e: React.MouseEvent<HTMLElement>, menu) => {
     const authenticated = true;
     if (true) {
       if (menu.isLink) {
         router.push(menu.link);
       } else {
-        handleMenuAction(e, menu.action);
+        handleMenuAction(e, menu);
       }
     } else {
     }
@@ -99,29 +63,9 @@ function MobileNavigation() {
         open={open}
         onClick={handleClose}
       >
-        <AccountMenu
-          sk={{
-            mt: -5,
-            // mb: 30,
-            "& .MuiAvatar-root": {
-              width: 32,
-              height: 32,
-              ml: -0.5,
-              mr: 1,
-            },
-            "&:after": {
-              content: '""',
-              display: "block",
-              position: "absolute",
-              bottom: 0,
-              right: 20,
-              width: 10,
-              height: 10,
-              bgcolor: "background.paper",
-              transform: "translateY(45%) rotate(-45deg)",
-              zIndex: 0,
-            },
-          }}
+        <QuickMenu
+          sk={quickMenuSX}
+          quickMenu={subMenu}
           handleClick={handleClick}
           anchorEl={anchorEl}
           open={open}
@@ -129,7 +73,7 @@ function MobileNavigation() {
         />
       </Backdrop>
 
-      <AuthDialog open={showModal} handleClose={handleMenuClick} />
+      <AuthDialog open={showAuthDialogModal} handleClose={handleMenuClick} />
       <Paper
         sx={{
           position: "fixed",
@@ -150,12 +94,12 @@ function MobileNavigation() {
       >
         <BottomNavigation
           showLabels
-          value={value}
+          value={mobileMenuValue}
           onChange={(event, newValue) => {
-            setValue(newValue);
+            setMobileMenuValue(newValue);
           }}
         >
-          {menus.map((menu: IMobileMenu, index: number) => {
+          {menu.map((menu, index: number) => {
             return (
               <BottomNavigationAction
                 sx={{

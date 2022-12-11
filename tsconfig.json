@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-    , "pages/_[store]", "layouts/store.tsx", "layouts/store.tsx"  ],
+    , "pages/_[store]", "layouts/store.tsx", "layouts/store.tsx", "store/menu.js", "store/menuContext.js"],
   "exclude": [
     "node_modules"
   ]

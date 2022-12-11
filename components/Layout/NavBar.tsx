@@ -9,47 +9,49 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import { Container } from "@mui/material";
 
 import { Search, ShoppingCart } from "@mui/icons-material";
-import AccountMenu from "./AccountMenu";
+import QuickMenu from "./QuickMenuPop";
+import { MenuContext } from "../../store/menuContext";
 
 export default function MenuAppBar() {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
+  const { menu, setSubMenuHandler, subMenu } = React.useContext(MenuContext);
 
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
+  const [quickMenuSX, setquickMenuSX] = React.useState({});
+
+  const [accountMenuEl, setAccountMenuElEl] =
+    React.useState<null | HTMLElement>(null);
+  const openAccountMenu = Boolean(accountMenuEl);
+
+  const handleAccountMenuClick = (
+    event: React.MouseEvent<HTMLElement>,
+    action: string
+  ) => {
+    if (action === "menu") {
+      setSubMenuHandler(menu[1].subMenu);
+      setquickMenuSX(menu[1].sxMenuDestop);
+    }
+    if (action === "account") {
+      setSubMenuHandler(menu[3].subMenu);
+      setquickMenuSX(menu[3].sxMenuDestop);
+    }
+    setAccountMenuElEl(event.currentTarget);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
+  const handleAccountMenuClose = () => {
+    setAccountMenuElEl(null);
   };
 
   return (
     <Box sx={{ flexGrow: 1, marginBottom: "1.5rem" }}>
-      <AccountMenu
-        sk={{
-          mt: 0.5,
-          ml: -19.5,
-          "&:after": {
-            content: '""',
-            display: "block",
-            position: "absolute",
-            top: 0,
-            right: 20,
-            width: 10,
-            height: 10,
-            bgcolor: "background.paper",
-            transform: "translateY(-45%) rotate(45deg)",
-            zIndex: 0,
-          },
-        }}
-        handleClick={handleClick}
-        anchorEl={anchorEl}
-        open={open}
-        handleClose={handleClose}
+      <QuickMenu
+        quickMenu={subMenu}
+        sk={quickMenuSX}
+        handleClick={handleAccountMenuClick}
+        anchorEl={accountMenuEl}
+        open={openAccountMenu}
+        handleClose={handleAccountMenuClose}
       />
 
       <AppBar
-        // position="sticky"
         sx={{
           background: "rgba(255,255,255, 0.98)",
           boxShadow: "rgba(0, 0, 0, 0.16) 0px -1px 5px",
@@ -73,9 +75,9 @@ export default function MenuAppBar() {
               }}
             >
               <IconButton
+                onClick={(e) => handleAccountMenuClick(e, "menu")}
                 size="medium"
                 edge="start"
-                // color="action"
                 aria-label="menu"
               >
                 <MenuIcon />
@@ -130,7 +132,9 @@ export default function MenuAppBar() {
                   },
                 }}
               >
-                <IconButton onClick={(e) => handleClick(e)}>
+                <IconButton
+                  onClick={(e) => handleAccountMenuClick(e, "account")}
+                >
                   <AccountCircle fontSize="medium" />
                 </IconButton>
               </Box>

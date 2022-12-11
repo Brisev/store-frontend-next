@@ -1,4 +1,6 @@
 import {
+  Avatar,
+  Box,
   Divider,
   ListItemIcon,
   Menu,
@@ -25,53 +27,14 @@ import {
 import React, { memo } from "react";
 import { useRouter } from "next/router";
 
-interface IAccountMenu {
-  title?: string;
-  icon?: React.ReactElement;
-  action?: string;
-  link?: string;
-  isLink?: boolean;
-  component?: React.ReactElement;
-  color?: string;
-}
-
-const accountMenu: IAccountMenu[] = [
-  {
-    title: "Saved Items",
-    icon: <Stars fontSize="small" />,
-    link: "/store/saved",
-    isLink: true,
-  },
-  {
-    title: "Recently viewed",
-    icon: <Preview fontSize="small" />,
-    link: "/store/recently-viewd",
-    isLink: true,
-  },
-  {
-    title: "Address Book",
-    icon: <MyLocationOutlined fontSize="small" />,
-    link: "/store/address-book",
-    isLink: true,
-  },
-  {
-    component: <Divider sx={{ my: 0.5 }} />,
-  },
-  {
-    title: "Account Management",
-    icon: <ManageAccountsOutlined fontSize="small" />,
-    link: "/store/account-update",
-    isLink: true,
-  },
-  {
-    title: "Logout",
-    icon: <Logout fontSize="small" color="error" />,
-    isLink: false,
-    color: "error",
-  },
-];
-
-function AccountMenu({ sk, handleClick, anchorEl, open, handleClose }: any) {
+function QuickMenu({
+  sk,
+  handleClick,
+  anchorEl,
+  open,
+  handleClose,
+  quickMenu = [],
+}: any) {
   const router = useRouter();
 
   const handleMenuAction = (
@@ -81,10 +44,7 @@ function AccountMenu({ sk, handleClick, anchorEl, open, handleClose }: any) {
     //
   };
 
-  const handleMenuItemClicked = (
-    e: React.MouseEvent<HTMLElement>,
-    menu: IAccountMenu
-  ) => {
+  const handleMenuItemClicked = (e: React.MouseEvent<HTMLElement>, menu) => {
     const authenticated = true;
     if (true) {
       if (menu.isLink) {
@@ -123,7 +83,7 @@ function AccountMenu({ sk, handleClick, anchorEl, open, handleClose }: any) {
           },
         }}
       >
-        {accountMenu.map((menu: IAccountMenu, index: number) => {
+        {quickMenu.map((menu, index: number) => {
           if (menu.component)
             return <div key={`divider_${index}`}>{menu.component}</div>;
           return (
@@ -133,7 +93,7 @@ function AccountMenu({ sk, handleClick, anchorEl, open, handleClose }: any) {
               // dense
               selected={isMenuSelected(menu.link)}
             >
-              <ListItemIcon>{menu.icon}</ListItemIcon>
+              {menu.icon && <ListItemIcon>{menu.icon}</ListItemIcon>}
               <Typography color={menu.color}>{menu.title}</Typography>
             </MenuItem>
           );
@@ -143,4 +103,4 @@ function AccountMenu({ sk, handleClick, anchorEl, open, handleClose }: any) {
   );
 }
 
-export default memo(AccountMenu);
+export default memo(QuickMenu);

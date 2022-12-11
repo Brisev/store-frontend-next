@@ -5,6 +5,7 @@ import NavigationBar from "../components/Layout/NavBar";
 import HorizontalQuickProductList from "../components/Product/HorizontalQuickProductList";
 
 import DUMMY_JSON from "../dummy/products.json";
+import MenuContextProvider from "../store/menuContext";
 
 const StoreLayoutDiv = styled("div")(({ theme }) => ({
   background: "#f5f5f5",
@@ -17,16 +18,18 @@ const StoreLayoutDiv = styled("div")(({ theme }) => ({
 
 export default function StoreLayout({ children }) {
   return (
-    <StoreLayoutDiv>
-      <NavigationBar />
-      <main>
-        <Container>
-          <>{children}</>
-        </Container>
-      </main>
-      <footer>
-        <MobileNavigation />
-      </footer>
-    </StoreLayoutDiv>
+    <MenuContextProvider>
+      <StoreLayoutDiv>
+        <NavigationBar />
+        <main>
+          <Container>
+            <>{children}</>
+          </Container>
+        </main>
+        <footer>
+          <MobileNavigation />
+        </footer>
+      </StoreLayoutDiv>
+    </MenuContextProvider>
   );
 }
