@@ -1,6 +1,6 @@
-import React, { ReactElement, useContext } from "react";
-import logo from "../../../assets/svg/mobile-nav-logo.svg";
-import { AddBoxRounded, Google, RemoveRounded } from "@mui/icons-material";
+import React, { ReactElement, useContext } from 'react';
+import logo from '../../../assets/svg/mobile-nav-logo.svg';
+import { AddBoxRounded, Google, RemoveRounded } from '@mui/icons-material';
 import {
   Typography,
   Stack,
@@ -9,12 +9,12 @@ import {
   styled,
   Grid,
   Divider,
-} from "@mui/material";
-import CartItem from "../../components/Cart/CartItem";
-import DUMMY_JSON from "../../dummy/products.json";
-import StoreLayout from "../../layouts/store";
-import CartSumarrySideBar from "../../components/Cart/CartSummarySideBar";
-import HorizontalQuickProductList from "../../components/Product/HorizontalQuickProductList";
+} from '@mui/material';
+import CartItem from '../../components/Cart/CartItem';
+import DUMMY_JSON from '../../dummy/products.json';
+import StoreLayout from '../../layouts/store';
+import CartSumarrySideBar from '../../components/Cart/CartSummarySideBar';
+import HorizontalQuickProductList from '../../components/Product/HorizontalQuickProductList';
 
 const Cart = () => {
   const cart = { items: DUMMY_JSON };
@@ -38,17 +38,17 @@ const Cart = () => {
   return (
     <>
       <Typography
-        variant="h5"
+        variant='h5'
         sx={{
           fontWeight: 700,
-          pb: "2rem",
+          pb: '2rem',
         }}
       >
-        Cart
+        Shopping Cart
       </Typography>
       {cart.items.length > 0 ? (
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={12} md={8}>
+          <Grid item xs={12} sm={12} md={7}>
             {cart.items.length > 0 &&
               cart.items.map((item: any, index: number) => (
                 <CartItem
@@ -72,31 +72,33 @@ const Cart = () => {
           <Grid
             item
             xs={12}
-            sm={4}
-            md={4}
-            sx={{
-              display: {
-                xs: "none",
-                sm: "none",
-                md: "block",
-              },
-            }}
+            sm={12}
+            md={5}
+            sx={
+              {
+                // display: {
+                //   xs: 'none',
+                //   sm: 'none',
+                //   md: 'block',
+                // },
+              }
+            }
           >
             <CartSumarrySideBar />
           </Grid>
 
           <Stack
-            direction="row"
-            width="100%"
-            bgcolor="#fff"
-            alignItems="center"
-            justifyContent="space-between"
-            py={1}
+            direction='row'
+            width='100%'
+            bgcolor='#fff'
+            alignItems='center'
+            justifyContent='space-between'
+            py={2}
             px={3}
             sx={{
               zIndex: 5,
-              display: { xs: "flex", sm: "flex", md: "none" },
-              position: "fixed",
+              display: { xs: 'flex', sm: 'flex', md: 'none' },
+              position: 'fixed',
               bottom: 57,
               left: 0,
               // borderTopColor: "#DBE1FC",
@@ -105,13 +107,13 @@ const Cart = () => {
             }}
           >
             <MuiButton
-              variant="contained"
+              variant='contained'
               disableElevation
               fullWidth
-              href="/store/checkout"
+              href='/store/checkout'
               sx={{
-                // padding: ".75rem 3rem",
-                borderRadius: "",
+                padding: '0.75rem 1rem',
+                borderRadius: '0.5rem',
               }}
             >
               Checkout (₦1,233,000)
@@ -120,23 +122,24 @@ const Cart = () => {
         </Grid>
       ) : (
         <Typography
-          variant="h5"
-          component="p"
-          sx={{ textAlign: "center", padding: "2rem 0" }}
+          variant='h5'
+          component='p'
+          sx={{ textAlign: 'center', padding: '2rem 0' }}
         >
           No items in cart
         </Typography>
       )}
       <Box mt={10}></Box>
       <HorizontalQuickProductList
-        title="Saved"
+        title='Saved'
         related={DUMMY_JSON}
-        seeMoreLink="/store/saved"
+        seeMoreLink='/store/saved'
       />
+      <Divider />
       <HorizontalQuickProductList
-        title="Recently seen"
+        title='Recently seen'
         related={DUMMY_JSON}
-        seeMoreLink="/store/recently-viewd"
+        seeMoreLink='/store/recently-viewd'
       />
     </>
   );
