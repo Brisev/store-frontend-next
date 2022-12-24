@@ -1,11 +1,11 @@
-import { Button, ButtonProps, styled } from "@mui/material";
-import { memo, MouseEventHandler, ReactElement } from "react";
-import { useState, useEffect } from "react";
+import { Button, ButtonProps, styled } from '@mui/material';
+import { memo, MouseEventHandler, ReactElement } from 'react';
+import { useState, useEffect } from 'react';
 
 const StyledButton = styled(Button)(({ theme }) => ({
-  padding: ".4rem 1rem",
-  borderRadius: ".3rem",
-  textTransform: "capitalize",
+  padding: '0.75rem 1rem',
+  borderRadius: '0.5rem',
+  textTransform: 'capitalize',
   // background: "primary",
   // color: "primary.main",
 }));
@@ -30,7 +30,7 @@ const ShopagoButton = ({
     <>
       {width >= 600 ? (
         <StyledButton
-          variant="contained"
+          variant='contained'
           disableElevation
           // size="small"
           // disableElevation
@@ -43,7 +43,7 @@ const ShopagoButton = ({
         <StyledButton
           disableElevation
           {...rest}
-          variant="contained"
+          variant='contained'
           // size="small"
           // disableElevation
           // onClick={onClickFuntion}

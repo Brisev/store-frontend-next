@@ -1,7 +1,7 @@
 [
   {
     "id": "8a3dc109-5656-4f33-89a1-bad5d519bbcc",
-    "name": "iPhone 13 pro max 256GB RAM, 4GB, Retina Display",
+    "name": "iPhone 13 pro max - 256GB RAM",
     "description": "<p>This is a paragraph.</p> <p>This is another paragraph.</p>",
     "tags": ["apple", "iphone", "ios"],
     "categoryId": "b81c410e-a5d1-4c07-8d42-6e46599df29c",
@@ -141,7 +141,7 @@
     "id": "9a4dc2010-6767-5f44-910a2-bad6d6110bbcc",
     "name": "Dell Aurora",
     "description": "<p>This is a paragraph.</p> <p>This is another paragraph.</p>",
-     "tags": ["windows", "dell", "gaming", "alienware"],
+    "tags": ["windows", "dell", "gaming", "alienware"],
     "categoryId": "c92c410e-a5d1-4c07-8d42-6e46599df29c",
     "storeId": "be61a64c-c5e1-42b6-ba12-c2e78da0c827",
     "price": 1270000,
@@ -266,7 +266,8 @@
   {
     "id": "10b3dc29-5asd56-4a33-89a1-94d5193ec",
     "name": "M1 Macbook Pro",
-    "description": "<p>This is a paragraph.</p> <p>This is another paragraph.</p>","tags": ["macbook", "laptop", "ios", "apple"],
+    "description": "<p>This is a paragraph.</p> <p>This is another paragraph.</p>",
+    "tags": ["macbook", "laptop", "ios", "apple"],
     "categoryId": "b81c410e-a5d1-4c07-8d42-6e46599df29c",
     "storeId": "be61a64c-c5e1-42b6-ba12-c2e78da0c827",
     "price": 990000,
@@ -449,8 +450,9 @@
   {
     "id": "163dc29-awef3ef-4a33-89a1-94d5193ec",
     "name": "2018 Macbook Pro",
-    
-    "description": "<p>This is a paragraph.</p> <p>This is another paragraph.</p>","tags": ["macbook", "pc", "ios", "apple"],
+
+    "description": "<p>This is a paragraph.</p> <p>This is another paragraph.</p>",
+    "tags": ["macbook", "pc", "ios", "apple"],
     "categoryId": "b81c410e-a5d1-4c07-8d42-6e46599df29c",
     "storeId": "be61a64c-c5e1-42b6-ba12-c2e78da0c827",
     "price": 720000,

@@ -5,13 +5,13 @@ import {
   IconButton,
   Stack,
   Typography,
-} from "@mui/material";
-import { FavoriteSharp } from "@mui/icons-material";
-import { calculateProductDiscount } from "../../../utils/products";
-import ShopagoButton from "../../Inputs/Button/Button";
-import ProductCardMedia from "./media";
-import ProductContent from "./content";
-import Link from "@mui/material/Link";
+} from '@mui/material';
+import { FavoriteSharp } from '@mui/icons-material';
+import { calculateProductDiscount } from '../../../utils/products';
+import ShopagoButton from '../../Inputs/Button/Button';
+import ProductCardMedia from './media';
+import ProductContent from './content';
+import Link from '@mui/material/Link';
 
 export interface OFFER {
   name: string;
@@ -52,22 +52,22 @@ export const ProductCard = (props: PRODUCT_CARD) => {
       sx={{
         maxWidth: 180,
         maxHeight: 350,
-        boxShadow: "none",
-        cursor: "pointer",
-        ":hover": {
-          boxShadow: showHoverShadow ? 2 : "none",
+        boxShadow: 'none',
+        cursor: 'pointer',
+        ':hover': {
+          // boxShadow: showHoverShadow ? 2 : "none",
         },
       }}
     >
       <ProductCardMedia id={id} media={media} name={name} />
       <Link
         href={`/store/${id}`}
-        underline="hover"
+        underline='hover'
         sx={{
-          textDecoration: "none",
-          color: "inherit",
-          ":hover": {
-            textDecoration: "none",
+          textDecoration: 'none',
+          color: 'inherit',
+          ':hover': {
+            textDecoration: 'none',
           },
         }}
       >
@@ -82,9 +82,9 @@ export const ProductCard = (props: PRODUCT_CARD) => {
       </Link>
 
       {showActionButtons && (
-        <CardActions sx={{ justifyContent: "space-between" }}>
+        <CardActions sx={{ justifyContent: 'space-between' }}>
           <ShopagoButton
-            size="small"
+            size='small'
             // sx={{
             //   display: "none",
             //   ":hover": {
@@ -95,9 +95,9 @@ export const ProductCard = (props: PRODUCT_CARD) => {
             <>Add to cart</>
           </ShopagoButton>
           <IconButton
-            aria-label="favourite"
-            sx={{ border: "0.1px solid #D5D5DE" }}
-            size="small"
+            aria-label='favourite'
+            sx={{ border: '0.1px solid #D5D5DE' }}
+            size='small'
           >
             <FavoriteSharp />
           </IconButton>

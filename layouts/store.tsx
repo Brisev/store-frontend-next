@@ -1,18 +1,18 @@
-import styled from "@emotion/styled";
-import { Container } from "@mui/system";
-import MobileNavigation from "../components/Layout/MobileNavigation";
-import NavigationBar from "../components/Layout/NavBar";
-import HorizontalQuickProductList from "../components/Product/HorizontalQuickProductList";
+import styled from '@emotion/styled';
+import { Container } from '@mui/system';
+import MobileNavigation from '../components/Layout/MobileNavigation';
+import NavigationBar from '../components/Layout/NavBar';
+import HorizontalQuickProductList from '../components/Product/HorizontalQuickProductList';
 
-import DUMMY_JSON from "../dummy/products.json";
-import MenuContextProvider from "../store/menuContext";
+import DUMMY_JSON from '../dummy/products.json';
+import MenuContextProvider from '../store/menuContext';
 
-const StoreLayoutDiv = styled("div")(({ theme }) => ({
-  background: "#f5f5f5",
-  paddingTop: "4rem",
-  paddingBottom: "8rem",
-  maxHeight: "auto",
-  height: "100%",
+const StoreLayoutDiv = styled('div')(({ theme }) => ({
+  background: '#fff',
+  paddingTop: '4rem',
+  paddingBottom: '8rem',
+  maxHeight: 'auto',
+  height: '100%',
   // width: "100%",
 }));
 

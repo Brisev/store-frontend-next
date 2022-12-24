@@ -1,31 +1,34 @@
-import { Divider, Typography } from "@mui/material";
-import { Box, Stack } from "@mui/system";
-import ShopagoButton from "../../components/Inputs/Button/Button";
+import { Divider, Typography } from '@mui/material';
+import { Box, Stack } from '@mui/system';
+import ShopagoButton from '../../components/Inputs/Button/Button';
 
 const CartSumarrySideBar = () => {
   return (
     <Box
       sx={{
-        height: 250,
-        backgroundColor: "white",
-        position: "sticky",
-        width: 400,
+        height: 280,
+        backgroundColor: 'white',
+        position: 'sticky',
+        // width: 400,
         top: 75,
+        borderRadius: '0.5rem',
+        outline: '1px solid #ddd',
       }}
     >
       <Stack
         mb={0}
-        px="1rem"
-        py="0.5rem"
-        direction="row"
-        alignItems="center"
-        justifyContent="space-between"
+        p={3}
+        direction='row'
+        alignItems='center'
+        justifyContent='space-between'
       >
-        <Typography variant="h6">Order Summary</Typography>
+        <Typography variant='subtitle1' sx={{ fontWeight: 600 }}>
+          Order Summary
+        </Typography>
         <Typography
           sx={{
-            fontWeight: 700,
-            color: "var(--bg-accent)",
+            fontWeight: 600,
+            color: 'primary.main',
           }}
         >
           {4} Items
@@ -33,14 +36,14 @@ const CartSumarrySideBar = () => {
       </Stack>
       <Divider />
       <Stack
-        mb={2}
-        px="1rem"
-        pt="1rem"
-        direction="row"
-        alignItems="center"
-        justifyContent="space-between"
+        mt={1}
+        py={1}
+        px={3}
+        direction='row'
+        alignItems='center'
+        justifyContent='space-between'
       >
-        <Typography sx={{ color: "var(--text-2)" }}>Subtotal</Typography>
+        <Typography sx={{ color: '', fontSize: '15px' }}>Subtotal</Typography>
         <Typography
           sx={{
             fontWeight: 700,
@@ -50,13 +53,15 @@ const CartSumarrySideBar = () => {
         </Typography>
       </Stack>
       <Stack
-        mb={2}
-        px="1rem"
-        direction="row"
-        alignItems="center"
-        justifyContent="space-between"
+        py={1}
+        px={3}
+        direction='row'
+        alignItems='center'
+        justifyContent='space-between'
       >
-        <Typography sx={{ color: "var(--text-2)" }}>Delivery Fee</Typography>
+        <Typography sx={{ color: '', fontSize: '15px' }}>
+          Delivery Fee
+        </Typography>
         <Typography
           sx={{
             fontWeight: 700,
@@ -66,33 +71,42 @@ const CartSumarrySideBar = () => {
         </Typography>
       </Stack>
       <Stack
-        mb={2}
-        px="1rem"
-        direction="row"
-        alignItems="center"
-        justifyContent="space-between"
+        py={1}
+        px={3}
+        direction='row'
+        alignItems='center'
+        justifyContent='space-between'
       >
         <Typography
           sx={{
             fontWeight: 700,
-
-            color: "var(--text-2)",
+            color: 'theme.text.primary',
+            fontSize: '15px',
           }}
         >
           Total
         </Typography>
         <Typography
           sx={{
-            fontWeight: 700,
-            color: "var(--bg-accent)",
+            fontWeight: 600,
+            color: 'primary.main',
           }}
         >
-          ₦900,000
+          ₦{(900000).toLocaleString()}
         </Typography>
       </Stack>
 
-      <Box px="1rem" pt="0.3rem">
-        <ShopagoButton fullWidth size="large" sx={{}} href="/store/checkout">
+      <Box
+        px={2}
+        py={1}
+        sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}
+      >
+        <ShopagoButton
+          fullWidth
+          size='large'
+          sx={{ fontSize: '14px' }}
+          href='/store/checkout'
+        >
           <>CHECKOUT</>
         </ShopagoButton>
       </Box>
