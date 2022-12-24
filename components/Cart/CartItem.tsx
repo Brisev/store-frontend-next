@@ -112,7 +112,7 @@ const CartItem = (props: any) => {
             Buy Again
           </Button>
         ) : (
-          <ButtonGroup size='small' disableElevation variant=''>
+          <ButtonGroup size='small' disableElevation>
             <Button>
               <DeleteRounded fontSize='small' color='error' />
             </Button>
