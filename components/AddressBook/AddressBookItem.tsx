@@ -1,7 +1,7 @@
-import { CheckCircle, Delete, EditLocationAlt } from "@mui/icons-material";
-import { Card, CardContent, IconButton, Typography } from "@mui/material";
-import { Box, Stack } from "@mui/system";
-import { memo } from "react";
+import { CheckCircle, Delete, EditLocationAlt } from '@mui/icons-material';
+import { Card, CardContent, IconButton, Typography } from '@mui/material';
+import { Box, Stack } from '@mui/system';
+import { memo } from 'react';
 
 const AddressBookItem = ({
   onDeleteAddress,
@@ -12,15 +12,20 @@ const AddressBookItem = ({
     <Card
       sx={{
         my: 1,
-        cursor: "pointer",
+        cursor: 'pointer',
+        boxShadow: 0,
+        borderWidth: '1px',
+        borderColor: '#DBE1FC',
+        borderStyle: 'solid',
+        borderRadius: 3,
       }}
       elevation={elevation}
     >
       <CardContent>
         <Stack
-          display="flex"
-          flexDirection="row"
-          justifyContent="space-between"
+          display='flex'
+          flexDirection='row'
+          justifyContent='space-between'
         >
           <Box>
             <Typography fontSize={14}>Bright, Ikhide</Typography>
@@ -34,31 +39,31 @@ const AddressBookItem = ({
           <Box>
             {showActionButtons && (
               <>
-                <IconButton size="small" color="warning">
-                  <EditLocationAlt fontSize="small" />
+                <IconButton size='small' color='warning'>
+                  <EditLocationAlt fontSize='small' />
                 </IconButton>
                 <IconButton
-                  size="small"
-                  color="error"
+                  size='small'
+                  color='error'
                   onClick={onDeleteAddress}
                 >
-                  <Delete fontSize="small" />
+                  <Delete fontSize='small' />
                 </IconButton>
               </>
             )}
           </Box>
         </Stack>
-        <Box mt={3} display="flex" flexDirection="row">
+        <Box mt={3} display='flex' flexDirection='row'>
           <CheckCircle
-            color="success"
-            fontSize="small"
+            color='success'
+            fontSize='small'
             sx={{
               mr: 1,
-              fontSize: "15px",
+              fontSize: '15px',
             }}
           />
           <Typography
-            variant="caption"
+            variant='caption'
             sx={{
               mt: -0.2,
             }}
