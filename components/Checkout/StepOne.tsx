@@ -76,6 +76,7 @@ const CheckoutStepOne = () => {
                     elevation={1}
                     showActionButtons={false}
                     onDeleteAddress={() => console.log()}
+                    position={index + 1}
                   />
                 </Suspense>
               </Grid>

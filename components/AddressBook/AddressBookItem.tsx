@@ -7,6 +7,7 @@ const AddressBookItem = ({
   onDeleteAddress,
   elevation = 0,
   showActionButtons = true,
+  position,
 }) => {
   return (
     <Card
@@ -15,7 +16,7 @@ const AddressBookItem = ({
         cursor: 'pointer',
         boxShadow: 0,
         borderWidth: '1px',
-        borderColor: '#DBE1FC',
+        borderColor: position === 1 ? 'primary.main' : '#DBE1FC',
         borderStyle: 'solid',
         borderRadius: 3,
       }}
