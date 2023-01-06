@@ -1,4 +1,4 @@
-import { ContentCopy } from "@mui/icons-material";
+import { ContentCopy } from '@mui/icons-material';
 import {
   Button,
   Card,
@@ -10,31 +10,31 @@ import {
   TextField,
   Tooltip,
   Typography,
-} from "@mui/material";
-import { Box } from "@mui/system";
-import Image from "next/image";
+} from '@mui/material';
+import { Box } from '@mui/system';
+import Image from 'next/image';
 
 const CheckoutStepTwo = ({ elevation = 0 }) => {
   return (
     <Box mt={4}>
-      <Typography variant="h6" fontSize={15} fontWeight={600} marginBottom={2}>
+      <Typography variant='h6' fontSize={16} fontWeight={700} mt={4} mb={2}>
         Voucher
       </Typography>
       <Box
         // display="flex"
         sx={{
           width: {
-            xs: "100%",
+            xs: '100%',
             sm: 300,
           },
         }}
       >
-        <TextField placeholder="Enter Voucher Code" fullWidth size="small" />
+        <TextField placeholder='Enter Voucher Code' fullWidth size='small' />
         <Button
           sx={{
             mt: 1,
           }}
-          variant="outlined"
+          variant='outlined'
           fullWidth
         >
           Apply
@@ -42,7 +42,7 @@ const CheckoutStepTwo = ({ elevation = 0 }) => {
       </Box>
 
       <Typography
-        variant="h6"
+        variant='h6'
         fontSize={15}
         fontWeight={600}
         marginBottom={2}
@@ -52,15 +52,15 @@ const CheckoutStepTwo = ({ elevation = 0 }) => {
       </Typography>
 
       <RadioGroup
-        aria-labelledby="demo-radio-buttons-group-label"
-        defaultValue="male"
-        name="radio-buttons-group"
+        aria-labelledby='demo-radio-buttons-group-label'
+        defaultValue='male'
+        name='radio-buttons-group'
       >
         <FormControlLabel
-          value="male"
+          value='male'
           control={<Radio />}
           sx={{
-            fontSize: "10px",
+            fontSize: '10px',
             // marginBottom: 2,
           }}
           label={
@@ -76,7 +76,7 @@ const CheckoutStepTwo = ({ elevation = 0 }) => {
           }
         />
         <FormControlLabel
-          value="female"
+          value='female'
           control={<Radio />}
           label={<Typography fontSize={14}>Pay withBank transfer</Typography>}
         />
@@ -84,7 +84,7 @@ const CheckoutStepTwo = ({ elevation = 0 }) => {
       <Card
         sx={{
           my: 1,
-          cursor: "pointer",
+          cursor: 'pointer',
         }}
         elevation={elevation}
       >
@@ -92,33 +92,33 @@ const CheckoutStepTwo = ({ elevation = 0 }) => {
           {/* <Box> */}
           <Box>
             <Typography
-              variant="caption"
+              variant='caption'
               // fontWeight={500}
-              display="block"
+              display='block'
               mb={3}
             >
               Pay the exact sum of <b> N93,800</b> to the account details below
             </Typography>
-            <Typography variant="body2" fontWeight={500}>
+            <Typography variant='body2' fontWeight={500}>
               Ikhide Bright
             </Typography>
-            <Typography variant="body2" display="block" fontWeight={500}>
+            <Typography variant='body2' display='block' fontWeight={500}>
               Zenith Bank
             </Typography>
-            <Box display="flex">
-              <Typography variant="body2" display="block" fontWeight={500}>
+            <Box display='flex'>
+              <Typography variant='body2' display='block' fontWeight={500}>
                 0215337974
               </Typography>
-              <Tooltip title="Copy Account Number">
+              <Tooltip title='Copy Account Number'>
                 <IconButton
-                  size="small"
+                  size='small'
                   sx={{
                     // display: "inline",
                     mt: -1,
                     ml: 2,
                   }}
                 >
-                  <ContentCopy fontSize="small" />
+                  <ContentCopy fontSize='small' />
                 </IconButton>
               </Tooltip>
             </Box>

@@ -1,4 +1,4 @@
-import { Box, Button, Grid, TextField } from "@mui/material";
+import { Box, Button, Grid, TextField } from '@mui/material';
 
 const AddressBookCreateAndUpdate = () => {
   return (
@@ -9,44 +9,44 @@ const AddressBookCreateAndUpdate = () => {
     >
       <Grid
         container
-        component="form"
+        component='form'
         rowSpacing={{ xs: 2, sm: 2, md: 2 }}
         columnSpacing={{ xs: 1, sm: 2, md: 2 }}
-        columns={{ xs: 12, sm: 6, md: 8, lg: 12 }}
+        columns={12}
         padding={0}
         // mx="auto"
       >
         <Grid item xs={6} sm={6} md={6} lg={6}>
-          <TextField placeholder="First Name" fullWidth size="small" />
+          <TextField placeholder='First Name' fullWidth size='small' />
         </Grid>
         <Grid item xs={6} sm={6} md={6} lg={6}>
-          <TextField placeholder="Last Name" fullWidth size="small" />
+          <TextField placeholder='Last Name' fullWidth size='small' />
         </Grid>
-        <Grid item xs={12} sm={4} md={4} lg={4}>
-          <TextField placeholder="Phone Number" fullWidth size="small" />
+        <Grid item xs={12} sm={12}>
+          <TextField placeholder='Phone Number' fullWidth size='small' />
         </Grid>
-        <Grid item xs={6} sm={4} md={4} lg={4}>
-          <TextField placeholder="State" fullWidth size="small" />
+        <Grid item xs={6} sm={6}>
+          <TextField placeholder='State' fullWidth size='small' />
         </Grid>
-        <Grid item xs={6} sm={4} md={4} lg={4}>
-          <TextField placeholder="City" fullWidth size="small" />
+        <Grid item xs={6} sm={6}>
+          <TextField placeholder='City' fullWidth size='small' />
         </Grid>
         <Grid item xs={12} sm={6} md={6} lg={6}>
           <TextField
-            placeholder="Address"
+            placeholder='Address'
             multiline
             rows={6}
             fullWidth
-            size="small"
+            size='small'
           />
         </Grid>
         <Grid item xs={12} sm={6} md={6} lg={6}>
           <TextField
-            placeholder="Additional Information"
+            placeholder='Additional Information'
             fullWidth
             multiline
             rows={6}
-            size="small"
+            size='small'
           />
         </Grid>
       </Grid>
